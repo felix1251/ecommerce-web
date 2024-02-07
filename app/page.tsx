@@ -1,3 +1,9 @@
+import { HomeMainSection } from "@/molecules";
+
 export default function Home() {
-  return <main className="">felix</main>;
+  return (
+    <main className="">
+      <HomeMainSection />
+    </main>
+  );
 }
