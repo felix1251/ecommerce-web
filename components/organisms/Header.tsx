@@ -1,5 +1,5 @@
 import Link from "next/link";
-import * as React from "react";
+import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";

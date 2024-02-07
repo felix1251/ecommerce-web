@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import CallIcon from "@mui/icons-material/Call";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -6,7 +6,7 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 
-const Banner: React.FunctionComponent = (props) => {
+const Banner: React.FunctionComponent = () => {
   return (
     <div className="bg-[#23856D] w-full flex items-center h-14">
       <div className="flex margin-max-screen justify-between gap-5 text-white font-medium">
