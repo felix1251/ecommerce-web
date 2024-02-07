@@ -43,7 +43,7 @@ export const fetchProducts = createAsyncThunk<
   }
 );
 
-// get multiple single product
+// get single product
 export const fetchSingleProduct = createAsyncThunk<
   Product,
   SingleProductPayload,
