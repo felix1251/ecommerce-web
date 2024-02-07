@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 interface ImageWithDescriptionProps {
   children: React.ReactNode;
   titleSize?: string;
@@ -24,7 +26,12 @@ const ImageWithDescription: React.FunctionComponent<
         <h2 className={`text-gray-800 uppercase font-bold ${titleSize}`}>
           {title}
         </h2>
-        <span className="text-gray-800 font-bold">Read more</span>
+        <Link
+          href="/"
+          className="text-gray-800 font-bold hover:underline underline-offset-4 decoration-2"
+        >
+          Read more
+        </Link>
       </div>
       {children}
     </div>
