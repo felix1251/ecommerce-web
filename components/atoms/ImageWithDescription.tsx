@@ -1,6 +1,6 @@
 import * as React from "react";
 
-interface IAppProps {
+interface ImageWithDescriptionProps {
   children: React.ReactNode;
   titleSize?: string;
   gap?: string;
@@ -9,7 +9,9 @@ interface IAppProps {
   span?: string;
 }
 
-const App: React.FunctionComponent<IAppProps> = ({
+const ImageWithDescription: React.FunctionComponent<
+  ImageWithDescriptionProps
+> = ({
   title = "Furniture",
   titleSize = "text-4xl",
   gap = "gap-2",
@@ -31,4 +33,4 @@ const App: React.FunctionComponent<IAppProps> = ({
   );
 };
 
-export default App;
+export default ImageWithDescription;
