@@ -1,5 +1,3 @@
-import React from "react";
-
 interface ImageWithDescriptionProps {
   children: React.ReactNode;
   titleSize?: string;
