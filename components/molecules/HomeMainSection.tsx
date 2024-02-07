@@ -15,6 +15,7 @@ const HomeMainSection: React.FunctionComponent = () => {
             title="Furniture"
             titleSize="text-2xl"
             items={5}
+            gap="gap-0.5"
           >
             <img
               className="w-full h-full"
@@ -26,6 +27,7 @@ const HomeMainSection: React.FunctionComponent = () => {
             title="Furniture"
             items={5}
             titleSize="text-2xl"
+            gap="gap-0.5"
           >
             <img
               className="w-full h-full"
@@ -37,6 +39,7 @@ const HomeMainSection: React.FunctionComponent = () => {
             title="Furniture"
             items={5}
             titleSize="text-2xl"
+            gap="gap-0.5"
           >
             <img
               className="w-full h-full"
