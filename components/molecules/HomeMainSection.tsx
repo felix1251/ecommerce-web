@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { ImageWithDescription } from "../atoms";
+import { ImageWithDescription } from "@/atoms";
 
 const HomeMainSection: React.FunctionComponent = () => {
   return (
