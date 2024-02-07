@@ -1,5 +1,9 @@
 import Link from "next/link";
 import * as React from "react";
+import SearchIcon from "@mui/icons-material/Search";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import { HeaderLinks } from "@/molecules";
 
 const Header: React.FunctionComponent = () => {
   return (
@@ -9,26 +13,19 @@ const Header: React.FunctionComponent = () => {
           <Link href="/" className="font-bold text-2xl">
             Bandage
           </Link>
-          <div>
-            <div className="flex font-medium gap-4 text-gray-700">
-              <Link
-                href="/"
-                className="hover:underline underline-offset-4 decoration-2"
-              >
-                Home
-              </Link>
-              <Link href="/">Shop</Link>
-              <Link href="/">About</Link>
-              <Link href="/">Blog</Link>
-              <Link href="/">Contact</Link>
-              <Link href="/">pages</Link>
-            </div>
-          </div>
+          <HeaderLinks />
         </div>
-        <div>
-          <a href="/" className="text-sky-400 font-semibold">
+        <div className="flex text-sky-400 gap-6 items-center">
+          <a href="/" className="font-semibold">
             Login / Register
           </a>
+          <SearchIcon style={{ fontSize: 25 }} />
+          <div className="flex item-center gap-0.5 text-sm font-medium">
+            <ShoppingCartIcon style={{ fontSize: 22 }} />1
+          </div>
+          <div className="flex item-center gap-0.5 text-sm font-medium">
+            <FavoriteBorderIcon style={{ fontSize: 22 }} />1
+          </div>
         </div>
       </div>
     </header>
