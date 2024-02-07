@@ -1,9 +1,7 @@
 import Link from "next/link";
 import * as React from "react";
 
-interface IHeaderLinksProps {}
-
-const HeaderLinks: React.FunctionComponent<IHeaderLinksProps> = (props) => {
+const HeaderLinks: React.FunctionComponent = () => {
   return (
     <div className="flex font-medium gap-4 text-gray-700">
       <Link
