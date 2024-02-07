@@ -10,7 +10,7 @@ const Header: React.FunctionComponent = () => {
     <header className="w-full margin-max-screen flex items-center h-24">
       <div className="flex justify-between items-center w-full">
         <div className="flex gap-28 items-center">
-          <Link href="/" className="font-bold text-2xl">
+          <Link href="/" className="font-bold text-2xl text-gray-800">
             Bandage
           </Link>
           <HeaderLinks />
