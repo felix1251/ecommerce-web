@@ -9,7 +9,6 @@ export interface ProductInitialState {
   error: any;
 }
 
-
 export interface ProductsPayload {
   limit: number;
 }
