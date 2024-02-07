@@ -12,4 +12,4 @@ Run the development server:
 npm run dev
 ```
 
-Using [Atomic Design Pattern (atoms, molecules, organismsm templates)](https://medium.com/@janelle.wg/atomic-design-pattern-how-to-structure-your-react-application-2bb4d9ca5f97)
+Using [Atomic Design Pattern (atoms, molecules, organisms templates)](https://medium.com/@janelle.wg/atomic-design-pattern-how-to-structure-your-react-application-2bb4d9ca5f97)
