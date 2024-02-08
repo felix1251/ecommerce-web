@@ -97,7 +97,7 @@ export const productSlice = createSlice({
             action.payload.products
           );
         } else {
-          state = initialState;
+          state.list = initialState.list;
           state.list = action.payload;
         }
         state.loading = false;
