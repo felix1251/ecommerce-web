@@ -4,7 +4,7 @@ const NotesSection: React.FunctionComponent = () => {
   return (
     <section className="py-16 margin-small-screen flex flex-col w-full">
       <SectionDescription />
-      <div className="mt-20 grid grid-cols-3 w-full">
+      <div className="my-20 grid grid-cols-3 w-full gap-10">
         <Note
           imgUrl="/book-reader.svg"
           label="Easy Wins"
@@ -13,12 +13,12 @@ const NotesSection: React.FunctionComponent = () => {
         <Note
           imgUrl="/note-icon.svg"
           label="Concrete"
-          description=" Get your best looking smile now!"
+          description="Defalcate is most focused in helping you discover your most beautiful smile"
         />
         <Note
           imgUrl="/growth-icon.svg"
           label="Hack Growth"
-          description=" Get your best looking smile now!"
+          description="Overcame any hurdle or any other problem."
         />
       </div>
     </section>
