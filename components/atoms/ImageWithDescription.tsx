@@ -22,7 +22,9 @@ const ImageWithDescription: React.FunctionComponent<
   return (
     <div className={`relative ${span}`}>
       <div className={`absolute top-5 left-5 flex flex-col ${gap}`}>
-        <span className="text-[#2DC071] font-semibold">{items} Items</span>
+        <span className="text-secondary-light font-semibold">
+          {items} Items
+        </span>
         <h2 className={`text-gray-800 uppercase font-bold ${titleSize}`}>
           {title}
         </h2>

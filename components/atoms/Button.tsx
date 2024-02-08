@@ -8,13 +8,13 @@ interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const conditionalVariant = (variant: string): string => {
-  const defaultVariant = "bg-[#23A6F0] text-white disabled:bg-gray-300";
+  const defaultVariant = "bg-primary text-white disabled:bg-gray-300";
 
   switch (variant) {
     case "primary":
       return defaultVariant;
     case "ghost":
-      return "bg-white border text-[#23A6F0] border-[#23A6F0] disabled:border-gray-300 disabled:text-gray-300";
+      return "bg-white border text-primary border-primary disabled:border-gray-300 disabled:text-gray-300";
     default:
       return defaultVariant;
   }

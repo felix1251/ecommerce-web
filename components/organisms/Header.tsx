@@ -14,7 +14,7 @@ const Header: React.FunctionComponent = () => {
           </Link>
           <HeaderLinks />
         </div>
-        <div className="flex text-sky-400 gap-6 items-center">
+        <div className="flex text-primary gap-6 items-center">
           <a href="/" className="font-semibold">
             Login / Register
           </a>
