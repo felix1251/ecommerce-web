@@ -28,7 +28,7 @@ const DynamicProductsSection: React.FunctionComponent<
   const dispatch = useDispatch<AppDispatch>();
   const productLoading: boolean = useSelector(isProductLoading);
   const productList: ProductListResponse = useSelector(getProductsList);
-  const canLoadMore = productList.limit * page < productList.total;
+  const canLoadMore: boolean = productList.limit * page < productList.total;
 
   useEffect(() => {
     dispatch(fetchProducts({ page: page, append: allowLoadMore }));
