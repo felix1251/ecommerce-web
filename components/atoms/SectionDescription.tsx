@@ -1,9 +1,11 @@
 interface ISectionDescriptionProps {
   withExtraDescription?: boolean;
+  label: string;
 }
 
 const SectionDescription: React.FunctionComponent<ISectionDescriptionProps> = ({
   withExtraDescription = true,
+  label,
 }: ISectionDescriptionProps) => {
   return (
     <div
@@ -21,7 +23,7 @@ const SectionDescription: React.FunctionComponent<ISectionDescriptionProps> = ({
           withExtraDescription ? "" : "-mb-3"
         }"`}
       >
-        Bestseller Products
+        {label}
       </div>
       {withExtraDescription && (
         <p className="font-medium text-neutral-500">

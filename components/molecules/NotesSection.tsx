@@ -3,7 +3,7 @@ import { Note, SectionDescription } from "@/atoms";
 const NotesSection: React.FunctionComponent = () => {
   return (
     <section className="py-16 margin-small-screen flex flex-col w-full">
-      <SectionDescription />
+      <SectionDescription label="THE BEST SERVICES" />
       <div className="my-20 grid grid-cols-3 place-items-start w-full gap-10">
         <Note
           imgUrl="/book-reader.svg"

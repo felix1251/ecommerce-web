@@ -47,7 +47,10 @@ const DynamicProductsSection: React.FunctionComponent<
         withExtraDescription ? "gap-16" : "gap-8"
       }`}
     >
-      <SectionDescription withExtraDescription={withExtraDescription} />
+      <SectionDescription
+        withExtraDescription={withExtraDescription}
+        label="Bestseller Products"
+      />
       {!withExtraDescription && <hr />}
       <div className="grid grid-cols-5 gap-6">
         {productLoading &&
