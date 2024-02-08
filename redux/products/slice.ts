@@ -2,27 +2,34 @@
 
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import {
-  Product,
-  ProductInitialState,
+  ProductsState,
   ProductsPayload,
   SingleProductPayload,
+  ProductListResponse,
+  ProductResponse,
 } from "./types";
 import axios, { AxiosError } from "axios";
+import { RootState } from "../store";
 
-const initialState: ProductInitialState = {
+const initialState: ProductsState = {
   product: null,
-  list: [],
+  list: {
+    products: [],
+    total: 0,
+    skip: 0,
+    limit: 10,
+  },
   loading: false,
   error: null,
 };
 
-interface RejectValue {
+export interface RejectValue {
   rejectValue: any;
 }
 
 // get multiple products with limit
 export const fetchProducts = createAsyncThunk<
-  Product[],
+  ProductListResponse,
   ProductsPayload,
   RejectValue
 >(
@@ -45,7 +52,7 @@ export const fetchProducts = createAsyncThunk<
 
 // get single product
 export const fetchSingleProduct = createAsyncThunk<
-  Product,
+  ProductResponse,
   SingleProductPayload,
   RejectValue
 >(
@@ -94,5 +101,12 @@ export const productSlice = createSlice({
       });
   },
 });
+
+export const getProductsList = (state: RootState): ProductListResponse =>
+  state.products.list;
+export const getSingleProduct = (state: RootState): ProductResponse | null =>
+  state.products.product;
+export const isProductLoading = (state: RootState): boolean =>
+  state.products.loading;
 
 export default productSlice.reducer;
