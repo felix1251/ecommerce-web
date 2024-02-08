@@ -13,11 +13,6 @@ const config: Config = {
         secondary: "#23856D",
         "secondary-light": "#2DC071",
       },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
       maxWidth: {
         primary: "1380px",
         secondary: "1180px",
