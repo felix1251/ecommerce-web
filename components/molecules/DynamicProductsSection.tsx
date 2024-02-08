@@ -64,7 +64,7 @@ const DynamicProductsSection: React.FunctionComponent<
         <div className="flex justify-center">
           <Button
             loading={productLoading}
-            disabled={!canLoadMore}
+            disabled={!canLoadMore || productLoading}
             onClick={loadMore}
             variant="ghost"
           >
