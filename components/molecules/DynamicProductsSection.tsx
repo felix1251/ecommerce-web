@@ -17,13 +17,13 @@ import {
 } from "@/atoms";
 
 export interface IDynamicProductsProps {
-  allowLoadMore?: boolean;
+  allowPagination?: boolean;
   withExtraDescription?: boolean;
 }
 
 const DynamicProductsSection: React.FunctionComponent<
   IDynamicProductsProps
-> = ({ allowLoadMore = false, withExtraDescription = true }) => {
+> = ({ allowPagination = false, withExtraDescription = true }) => {
   const [page, setPage] = useState<number>(1);
   const dispatch = useDispatch<AppDispatch>();
   const productLoading: boolean = useSelector(isProductLoading);
@@ -31,8 +31,8 @@ const DynamicProductsSection: React.FunctionComponent<
   const canLoadMore: boolean = productList.limit * page < productList.total;
 
   useEffect(() => {
-    dispatch(fetchProducts({ page: page, append: allowLoadMore }));
-  }, [dispatch, page, allowLoadMore]);
+    dispatch(fetchProducts({ page: page, append: true }));
+  }, [dispatch, page]);
 
   const loadMore = () => {
     if (canLoadMore) setPage((pg) => pg + 1);
@@ -60,7 +60,7 @@ const DynamicProductsSection: React.FunctionComponent<
           />
         ))}
       </div>
-      {allowLoadMore && (
+      {allowPagination && (
         <div className="flex justify-center">
           <Button
             loading={productLoading}

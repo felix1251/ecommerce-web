@@ -1,6 +1,6 @@
 import { SectionDescription } from "@/atoms";
 
-const NotesSections: React.FunctionComponent = () => {
+const NotesSection: React.FunctionComponent = () => {
   return (
     <section className="py-10 margin-small-screen flex flex-col">
       <SectionDescription />
@@ -8,4 +8,4 @@ const NotesSections: React.FunctionComponent = () => {
   );
 };
 
-export default NotesSections;
+export default NotesSection;

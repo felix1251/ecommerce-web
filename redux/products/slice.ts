@@ -11,14 +11,16 @@ import {
 import axios, { AxiosError } from "axios";
 import { RootState } from "../store";
 
+const ProductList: ProductListResponse = {
+  products: [],
+  total: 0,
+  skip: 0,
+  limit: 10,
+};
+
 const initialState: ProductsState = {
   product: null,
-  list: {
-    products: [],
-    total: 0,
-    skip: 0,
-    limit: 10,
-  },
+  list: ProductList,
   loading: false,
   error: null,
 };
@@ -84,9 +86,9 @@ export const productSlice = createSlice({
       })
       .addCase(fetchProducts.fulfilled, (state, action) => {
         if (
-          action.meta.arg?.append &&
-          action.meta.arg?.page &&
-          action.meta.arg?.page > 1
+          action.meta.arg.append &&
+          action.meta.arg.page &&
+          action.meta.arg.page > 1
         ) {
           state.list.limit = action.payload.limit;
           state.list.skip = action.payload.skip;

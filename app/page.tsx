@@ -1,15 +1,15 @@
 import {
   DynamicProductsSection,
   HomeMainSection,
-  NotesSections,
+  NotesSection,
 } from "@/molecules";
 
 export default function Home() {
   return (
     <main>
       <HomeMainSection />
-      <DynamicProductsSection allowLoadMore />
-      <NotesSections />
+      <DynamicProductsSection allowPagination />
+      <NotesSection />
     </main>
   );
 }
