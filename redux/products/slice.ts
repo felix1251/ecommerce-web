@@ -34,10 +34,10 @@ export const fetchProducts = createAsyncThunk<
   RejectValue
 >(
   "products/fetchProducts",
-  async ({ limit = 10 }: ProductsPayload, { rejectWithValue }) => {
+  async ({ limit = 10, skip = 0 }: ProductsPayload, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        `https://dummyjson.com/products?limit=${limit}`
+        `https://dummyjson.com/products?limit=${limit}&skip=${skip}`
       );
       return response.data;
     } catch (err) {
