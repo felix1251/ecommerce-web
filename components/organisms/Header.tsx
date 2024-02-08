@@ -1,7 +1,7 @@
 import { HeaderLinks } from "@/molecules";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import SearchIcon from "@mui/icons-material/Search";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import ShoppingCartOutlined from "@mui/icons-material/ShoppingCartOutlined";
 import Link from "next/link";
 
 const Header: React.FunctionComponent = () => {
@@ -20,7 +20,7 @@ const Header: React.FunctionComponent = () => {
           </a>
           <SearchIcon style={{ fontSize: 25 }} />
           <div className="flex item-center gap-0.5 text-sm font-medium">
-            <ShoppingCartIcon style={{ fontSize: 22 }} />1
+            <ShoppingCartOutlined style={{ fontSize: 22 }} />1
           </div>
           <div className="flex item-center gap-0.5 text-sm font-medium">
             <FavoriteBorderIcon style={{ fontSize: 22 }} />1
