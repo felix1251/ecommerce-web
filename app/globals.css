@@ -10,4 +10,8 @@
   .margin-min-screen {
     @apply mx-auto max-w-secondary px-4 md:px-8 w-full;
   }
+
+  .margin-small-screen {
+    @apply mx-auto max-w-tertiary px-4 md:px-8 w-full;
+  }
 }

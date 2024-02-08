@@ -16,6 +16,7 @@ const config: Config = {
       maxWidth: {
         primary: "1380px",
         secondary: "1180px",
+        tertiary: "1000px",
       },
     },
   },

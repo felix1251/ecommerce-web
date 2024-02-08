@@ -34,10 +34,12 @@ export const fetchProducts = createAsyncThunk<
   RejectValue
 >(
   "products/fetchProducts",
-  async ({ limit = 10, skip = 0 }: ProductsPayload, { rejectWithValue }) => {
+  async ({ limit = 10, page = 1 }: ProductsPayload, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        `https://dummyjson.com/products?limit=${limit}&skip=${skip}`
+        `https://dummyjson.com/products?limit=${limit}&skip=${
+          (page - 1) * limit
+        }`
       );
       return response.data;
     } catch (err) {
@@ -81,8 +83,22 @@ export const productSlice = createSlice({
         state.loading = true;
       })
       .addCase(fetchProducts.fulfilled, (state, action) => {
+        if (
+          action.meta.arg?.append &&
+          action.meta.arg?.page &&
+          action.meta.arg?.page > 1
+        ) {
+          state.list.limit = action.payload.limit;
+          state.list.skip = action.payload.skip;
+          state.list.total = action.payload.total;
+          state.list.products = state.list.products.concat(
+            action.payload.products
+          );
+        } else {
+          state.list = initialState.list;
+          state.list = action.payload;
+        }
         state.loading = false;
-        state.list = action.payload;
       })
       .addCase(fetchProducts.rejected, (state, action) => {
         state.loading = false;
@@ -92,8 +108,8 @@ export const productSlice = createSlice({
         state.loading = true;
       })
       .addCase(fetchSingleProduct.fulfilled, (state, action) => {
-        state.loading = false;
         state.product = action.payload;
+        state.loading = false;
       })
       .addCase(fetchSingleProduct.rejected, (state, action) => {
         state.loading = false;

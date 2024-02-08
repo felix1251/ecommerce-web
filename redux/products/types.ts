@@ -27,8 +27,9 @@ export interface ProductsState {
 }
 
 export interface ProductsPayload {
-  limit: number;
-  skip?: number;
+  limit?: number;
+  page?: number;
+  append?: boolean;
 }
 
 export interface SingleProductPayload {
