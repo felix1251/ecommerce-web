@@ -1,15 +1,15 @@
 "user client";
 
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import {
-  ProductsState,
-  ProductsPayload,
-  SingleProductPayload,
-  ProductListResponse,
-  ProductResponse,
-} from "./types";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios, { AxiosError } from "axios";
 import { RootState } from "../store";
+import {
+  ProductListResponse,
+  ProductResponse,
+  ProductsPayload,
+  ProductsState,
+  SingleProductPayload,
+} from "./types";
 
 const ProductList: ProductListResponse = {
   products: [],

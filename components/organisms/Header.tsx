@@ -1,8 +1,8 @@
-import Link from "next/link";
+import { HeaderLinks } from "@/molecules";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import { HeaderLinks } from "@/molecules";
+import Link from "next/link";
 
 const Header: React.FunctionComponent = () => {
   return (

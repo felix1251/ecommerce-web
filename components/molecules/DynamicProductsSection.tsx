@@ -1,6 +1,12 @@
 "use client";
 
 import {
+  Button,
+  ProductCard,
+  ProductCardLoading,
+  SectionDescription,
+} from "@/atoms";
+import {
   fetchProducts,
   getProductList,
   isProductLoading,
@@ -9,12 +15,6 @@ import { ProductListResponse } from "@/redux/products/types";
 import { AppDispatch } from "@/redux/store";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  Button,
-  ProductCardLoading,
-  SectionDescription,
-  ProductCard,
-} from "@/atoms";
 
 export interface IDynamicProductsProps {
   allowPagination?: boolean;

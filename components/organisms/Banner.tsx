@@ -1,9 +1,9 @@
 import CallIcon from "@mui/icons-material/Call";
-import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import YouTubeIcon from "@mui/icons-material/YouTube";
 import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import TwitterIcon from "@mui/icons-material/Twitter";
+import YouTubeIcon from "@mui/icons-material/YouTube";
 
 const Banner: React.FunctionComponent = () => {
   return (

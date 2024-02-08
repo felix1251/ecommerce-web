@@ -1,5 +1,3 @@
-import React from "react";
-
 const ProductCard: React.FunctionComponent = () => {
   return (
     <div className="flex flex-col gap-5 max-w-md">
