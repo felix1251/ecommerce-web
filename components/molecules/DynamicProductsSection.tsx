@@ -23,7 +23,10 @@ export interface IDynamicProductsProps {
 
 const DynamicProductsSection: React.FunctionComponent<
   IDynamicProductsProps
-> = ({ allowPagination = false, withExtraDescription = true }) => {
+> = ({
+  allowPagination = false,
+  withExtraDescription = true,
+}: IDynamicProductsProps) => {
   const [page, setPage] = useState<number>(1);
   const dispatch = useDispatch<AppDispatch>();
   const productLoading: boolean = useSelector(isProductLoading);

@@ -4,7 +4,7 @@ interface ISectionDescriptionProps {
 
 const SectionDescription: React.FunctionComponent<ISectionDescriptionProps> = ({
   withExtraDescription = true,
-}) => {
+}: ISectionDescriptionProps) => {
   return (
     <div
       className={`flex flex-col ${

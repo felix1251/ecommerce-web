@@ -26,7 +26,7 @@ const Button: React.FunctionComponent<IButtonProps> = ({
   capitalize = true,
   loading = false,
   ...props
-}) => {
+}: IButtonProps) => {
   return (
     <button
       className={`flex gap-2 px-6 py-2.5 text-sm font-semibold rounded-md w-fit ${

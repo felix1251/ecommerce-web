@@ -14,7 +14,7 @@ const ProductCard: React.FunctionComponent<IProductCardProps> = ({
   title,
   thumbnail,
   brand,
-}) => {
+}: IProductCardProps) => {
   return (
     <Link href={`/products/${id}`} className="flex flex-col gap-5 max-w-md">
       <img

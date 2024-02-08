@@ -9,6 +9,6 @@ interface IReduxProviderProps {
 
 export const Provider: React.FunctionComponent<IReduxProviderProps> = ({
   children,
-}) => {
+}: IReduxProviderProps) => {
   return <ReduxProvider store={store}>{children}</ReduxProvider>;
 };

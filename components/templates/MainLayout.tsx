@@ -6,7 +6,7 @@ interface IMainLayoutProps {
 
 const MainLayout: React.FunctionComponent<IMainLayoutProps> = ({
   children,
-}) => {
+}: IMainLayoutProps) => {
   return (
     <>
       <Banner />

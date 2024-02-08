@@ -18,7 +18,7 @@ const ImageWithDescription: React.FunctionComponent<
   span,
   items,
   children,
-}) => {
+}: ImageWithDescriptionProps) => {
   return (
     <div className={`relative ${span}`}>
       <div className={`absolute top-5 left-5 flex flex-col ${gap}`}>
