@@ -2,7 +2,7 @@
 
 import {
   fetchProducts,
-  getProductsList,
+  getProductList,
   isProductLoading,
 } from "@/redux/products/slice";
 import { ProductListResponse } from "@/redux/products/types";
@@ -27,7 +27,7 @@ const DynamicProductsSection: React.FunctionComponent<
   const [page, setPage] = useState<number>(1);
   const dispatch = useDispatch<AppDispatch>();
   const productLoading: boolean = useSelector(isProductLoading);
-  const productList: ProductListResponse = useSelector(getProductsList);
+  const productList: ProductListResponse = useSelector(getProductList);
   const canLoadMore: boolean = productList.limit * page < productList.total;
 
   useEffect(() => {

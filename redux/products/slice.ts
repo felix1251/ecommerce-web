@@ -25,7 +25,7 @@ const initialState: ProductsState = {
   error: null,
 };
 
-export interface RejectValue {
+interface RejectValue {
   rejectValue: any;
 }
 
@@ -120,7 +120,7 @@ export const productSlice = createSlice({
   },
 });
 
-export const getProductsList = (state: RootState): ProductListResponse =>
+export const getProductList = (state: RootState): ProductListResponse =>
   state.products.list;
 export const getSingleProduct = (state: RootState): ProductResponse | null =>
   state.products.product;
