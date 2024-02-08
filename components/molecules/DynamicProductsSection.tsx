@@ -9,8 +9,12 @@ import { ProductListResponse } from "@/redux/products/types";
 import { AppDispatch } from "@/redux/store";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Button, ProductCardLoading, SectionDescription } from "@/atoms";
-import { ProductCard } from "@/atoms";
+import {
+  Button,
+  ProductCardLoading,
+  SectionDescription,
+  ProductCard,
+} from "@/atoms";
 
 export interface IDynamicProductsProps {
   allowLoadMore?: boolean;
