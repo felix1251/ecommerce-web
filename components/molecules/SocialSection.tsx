@@ -4,9 +4,15 @@ import FacebookRounded from "@mui/icons-material/FacebookRounded";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 
-const SocialSection: React.FunctionComponent = () => {
+interface ISocialSectionProps {
+  bgColor?: string;
+}
+
+const SocialSection: React.FunctionComponent<ISocialSectionProps> = ({
+  bgColor = "bg-zinc-50",
+}: ISocialSectionProps) => {
   return (
-    <section className="w-full bg-zinc-100">
+    <section className={`w-full ${bgColor}`}>
       <div className="py-16">
         <div className="flex justify-between margin-min-screen ">
           <h2 className="font-bold text-3xl text-gray-800">Bandage</h2>
