@@ -21,6 +21,9 @@ const config: Config = {
       backgroundImage: {
         "better-experence": "url(/better-experence-bg.png)",
       },
+      screens: {
+        "lg-2": "1064px",
+      },
     },
   },
   plugins: [],

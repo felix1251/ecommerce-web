@@ -1,44 +1,14 @@
-import Link from "next/link";
+import { HeaderLink } from "@/atoms";
 
 const HeaderLinks: React.FunctionComponent = () => {
   return (
-    <div className="flex font-medium gap-5 text-gray-700">
-      <Link
-        href="/"
-        className="hover:underline underline-offset-4 decoration-2"
-      >
-        Home
-      </Link>
-      <Link
-        href="/"
-        className="hover:underline underline-offset-4 decoration-2"
-      >
-        Shop
-      </Link>
-      <Link
-        href="/"
-        className="hover:underline underline-offset-4 decoration-2"
-      >
-        About
-      </Link>
-      <Link
-        href="/"
-        className="hover:underline underline-offset-4 decoration-2"
-      >
-        Blog
-      </Link>
-      <Link
-        href="/"
-        className="hover:underline underline-offset-4 decoration-2"
-      >
-        Contact
-      </Link>
-      <Link
-        href="/"
-        className="hover:underline underline-offset-4 decoration-2"
-      >
-        pages
-      </Link>
+    <div className="flex flex-col lg:flex-row font-medium lg:gap-5 text-gray-700">
+      <HeaderLink text="Home" url="/" />
+      <HeaderLink text="Shop" url="/" />
+      <HeaderLink text="About" url="/" />
+      <HeaderLink text="Blog" url="/" />
+      <HeaderLink text="Contact" url="/" />
+      <HeaderLink text="Pages" url="/" />
     </div>
   );
 };

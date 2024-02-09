@@ -18,7 +18,7 @@ const TestimonyCard: React.FunctionComponent = () => {
           />
           <Rating name="user-star" readOnly={true} value={4} />
         </div>
-        <p className="text-center text-sm w-96 font-semibold text-zinc-500">
+        <p className="text-center text-sm w-full md:w-96 font-semibold text-zinc-500">
           Slate helps you see how many more days you need to work to reach your
           financial goal.
         </p>

@@ -10,7 +10,7 @@ import {
 
 export default function Home() {
   return (
-    <main>
+    <main className="flex-1">
       <HomeMainSection />
       <DynamicProductsSection allowPagination />
       <NotesSection />

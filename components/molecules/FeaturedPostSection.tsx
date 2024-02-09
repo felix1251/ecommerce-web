@@ -9,7 +9,7 @@ const FeaturedPostSection: React.FunctionComponent = () => {
           Featured Posts
         </h2>
       </div>
-      <div className="grid grid-cols-3 gap-3.5">
+      <div className="grid place-content-center md:grid-cols-3 gap-7 md:gap-3.5">
         <PostCard
           isNew={true}
           imgUrl="/post-one.png"

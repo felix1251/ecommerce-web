@@ -1,9 +1,11 @@
 export { default as BetterExperienceSection } from "./BetterExperienceSection";
 export { default as DynamicProductsSection } from "./DynamicProductsSection";
 export { default as FeaturedPostSection } from "./FeaturedPostSection";
+export { default as HeaderActions } from "./HeaderActions";
 export { default as HeaderLinks } from "./HeaderLinks";
 export { default as HomeMainSection } from "./HomeMainSection";
 export { default as MediaPhotos } from "./MediaPhotos";
+export { default as MobileNav } from "./MobileNav";
 export { default as NotesSection } from "./NotesSection";
 export { default as SocialSection } from "./SocialSection";
 export { default as SubscribeEmail } from "./SubscribeEmail";

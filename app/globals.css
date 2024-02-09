@@ -9,14 +9,14 @@
   }
 
   .margin-max-screen {
-    @apply mx-auto max-w-primary px-4 md:px-8 w-full;
+    @apply mx-auto max-w-primary px-8 w-full;
   }
 
   .margin-min-screen {
-    @apply mx-auto max-w-secondary px-4 md:px-8 w-full;
+    @apply mx-auto max-w-secondary px-8 w-full;
   }
 
   .margin-small-screen {
-    @apply mx-auto max-w-tertiary px-4 md:px-8 w-full;
+    @apply mx-auto max-w-tertiary px-8 w-full;
   }
 }

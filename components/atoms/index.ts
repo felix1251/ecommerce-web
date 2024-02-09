@@ -1,4 +1,6 @@
 export { default as Button } from "./Button";
+export { default as HamburgerIcon } from "./HamburgerIcon";
+export { default as HeaderLink } from "./HeaderLink";
 export { default as ImageWithDescription } from "./ImageWithDescription";
 export { default as Note } from "./Note";
 export { default as PostCard } from "./PostCard";

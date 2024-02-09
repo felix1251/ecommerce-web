@@ -13,7 +13,7 @@ const ImageWithDescription: React.FunctionComponent<
   ImageWithDescriptionProps
 > = ({
   title = "Furniture",
-  titleSize = "text-4xl",
+  titleSize = "text-2xl md:text-4xl",
   gap = "gap-2",
   span,
   items,

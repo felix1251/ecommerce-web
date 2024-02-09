@@ -52,7 +52,7 @@ const DynamicProductsSection: React.FunctionComponent<
         label="Bestseller Products"
       />
       {!withExtraDescription && <hr />}
-      <div className="grid grid-cols-5 gap-6">
+      <div className="grid px-9 sm:py-0 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
         {productLoading &&
           page == 1 &&
           Array.from(Array(10)).map((_, i) => <ProductCardLoading key={i} />)}

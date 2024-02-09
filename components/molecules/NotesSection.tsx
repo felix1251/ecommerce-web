@@ -4,7 +4,7 @@ const NotesSection: React.FunctionComponent = () => {
   return (
     <section className="py-16 margin-small-screen flex flex-col w-full">
       <SectionDescription label="THE BEST SERVICES" />
-      <div className="my-20 grid grid-cols-3 place-items-start w-full gap-10">
+      <div className="my-20 grid md:grid-cols-3 place-content-center place-items-start w-full gap-10">
         <Note
           imgUrl="/book-reader.svg"
           label="Easy Wins"

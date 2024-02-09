@@ -14,7 +14,7 @@ const MediaPhotos: React.FunctionComponent = () => {
   ];
 
   return (
-    <div className="grid grid-cols-3 gap-4">
+    <div className="grid-cols-3 gap-4 hidden lg:grid">
       {mediaPhotos.map((url, idx) => (
         <img
           key={idx}
