@@ -1,53 +1,28 @@
 /* eslint-disable @next/next/no-img-element */
 
 const MediaPhotos: React.FunctionComponent = () => {
+  const mediaPhotos = [
+    "/about-us-camera-image.png",
+    "/about-us-female-image.png",
+    "/about-us-wall-image.png",
+    "/about-us-flower-cake-image.png",
+    "/about-us-photoshoot-image.png",
+    "/about-us-studying-image.png",
+    "/about-us-mountain-image.png",
+    "/about-us-river-image.png",
+    "/about-us-blue-image.png",
+  ];
+
   return (
     <div className="grid grid-cols-3 gap-4">
-      <img
-        className="w-full h-full object-cover object-center"
-        src="/about-us-camera-image.png"
-        alt="about-us-camera-image"
-      />
-      <img
-        className="w-full h-full object-cover object-center"
-        src="/about-us-female-image.png"
-        alt="about-us-female-image"
-      />
-      <img
-        className="w-full h-full object-cover object-center"
-        src="/about-us-wall-image.png"
-        alt="about-us-wall-image"
-      />
-      <img
-        className="w-full h-full object-cover object-center"
-        src="/about-us-flower-cake-image.png"
-        alt="about-us-flower-cake-image"
-      />
-      <img
-        className="w-full h-full object-cover object-center"
-        src="/about-us-photoshoot-image.png"
-        alt="about-us-photoshoot-image"
-      />
-      <img
-        className="w-full h-full object-cover object-center"
-        src="/about-us-studying-image.png"
-        alt="about-us-studying-image"
-      />
-      <img
-        className="w-full h-full object-cover object-center"
-        src="/about-us-mountain-image.png"
-        alt="about-us-mountain-image"
-      />
-      <img
-        className="w-full h-full object-cover object-center"
-        src="/about-us-camera-image.png"
-        alt="about-us-camera-image"
-      />
-      <img
-        className="w-full h-full object-cover object-center"
-        src="/about-us-camera-image.png"
-        alt="about-us-camera-image"
-      />
+      {mediaPhotos.map((url, idx) => (
+        <img
+          key={idx}
+          className="w-32 h-32 object-cover object-center"
+          src={url}
+          alt={url}
+        />
+      ))}
     </div>
   );
 };
