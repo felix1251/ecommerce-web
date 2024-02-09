@@ -23,7 +23,7 @@ const ProductCard: React.FunctionComponent<IProductCardProps> = ({
   return (
     <Link href={`/products/${id}`} className="flex flex-col gap-4 max-w-md">
       <img
-        className="h-[22rem] sm:h-80 md:h-52 object-cover object-center rounded-sm border"
+        className="h-[20rem] sm:h-80 md:h-52 object-cover object-center rounded-sm border"
         src={thumbnail}
         alt={title}
       />
