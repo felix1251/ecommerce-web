@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { totalPrice } from "@/utils";
 import Link from "next/link";
 import React from "react";
 
@@ -7,6 +8,8 @@ interface IProductCardProps {
   title: string;
   thumbnail: string;
   brand: string;
+  price: number;
+  discountPercentage: number;
 }
 
 const ProductCard: React.FunctionComponent<IProductCardProps> = ({
@@ -14,6 +17,8 @@ const ProductCard: React.FunctionComponent<IProductCardProps> = ({
   title,
   thumbnail,
   brand,
+  price,
+  discountPercentage,
 }: IProductCardProps) => {
   return (
     <Link href={`/products/${id}`} className="flex flex-col gap-5 max-w-md">
@@ -25,6 +30,12 @@ const ProductCard: React.FunctionComponent<IProductCardProps> = ({
       <div className="flex flex-col text-center gap-2">
         <h3 className="font-semibold text-[15px] text-slate-800">{title}</h3>
         <span className="text-sm text-gray-500 font-bold">{brand}</span>
+      </div>
+      <div className="flex gap-2 w-full justify-center font-semibold text-sm">
+        <span className="text-zinc-400">${price}</span>
+        <span className="text-secondary">
+          ${totalPrice(price, discountPercentage)}
+        </span>
       </div>
     </Link>
   );
