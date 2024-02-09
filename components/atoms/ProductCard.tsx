@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { round, totalPrice } from "@/utils";
+import { discountedPrice, round } from "@/utils";
 import Link from "next/link";
 import React from "react";
 
@@ -34,7 +34,7 @@ const ProductCard: React.FunctionComponent<IProductCardProps> = ({
       <div className="flex gap-2 w-full justify-center font-bold text-sm">
         <span className="text-zinc-400">${round(price, 2)}</span>
         <span className="text-secondary">
-          ${totalPrice(price, discountPercentage)}
+          ${discountedPrice(price, discountPercentage)}
         </span>
       </div>
     </Link>

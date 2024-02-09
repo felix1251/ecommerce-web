@@ -1,5 +1,5 @@
-export function totalPrice(price: number, percent: number): number {
-  return round((percent / 100) * price, 2);
+export function discountedPrice(price: number, percent: number): number {
+  return round(price - (percent / 100) * price, 2);
 }
 
 export function round(value: number, decimals: number): number {
