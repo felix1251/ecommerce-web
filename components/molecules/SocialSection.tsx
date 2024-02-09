@@ -8,7 +8,7 @@ const SocialSection: React.FunctionComponent = () => {
   return (
     <section className="w-full bg-zinc-100">
       <div className="py-16">
-        <div className="flex justify-between margin-max-screen">
+        <div className="flex justify-between margin-min-screen ">
           <h2 className="font-bold text-3xl text-gray-800">Bandage</h2>
           <div className="text-primary flex gap-5">
             <FacebookRounded style={{ fontSize: 30 }} />
@@ -17,7 +17,6 @@ const SocialSection: React.FunctionComponent = () => {
           </div>
         </div>
       </div>
-      <hr className="margin-max-screen border-t-2" />
     </section>
   );
 };

@@ -6,5 +6,6 @@ export { default as HomeMainSection } from "./HomeMainSection";
 export { default as MediaPhotos } from "./MediaPhotos";
 export { default as NotesSection } from "./NotesSection";
 export { default as SocialSection } from "./SocialSection";
+export { default as SubscribeEmail } from "./SubscribeEmail";
 export { default as Testimony } from "./Testimony";
 export { default as WhatTheySayAboutUsSection } from "./WhatTheySayAboutUsSection";

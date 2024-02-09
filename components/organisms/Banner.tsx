@@ -7,7 +7,7 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 
 const Banner: React.FunctionComponent = () => {
   return (
-    <div className="bg-secondary w-full flex items-center h-14">
+    <div className="bg-secondary w-full flex items-center min-h-14">
       <div className="flex margin-max-screen justify-between gap-5 text-white font-medium">
         <div className="flex gap-10">
           <div className="flex gap-0.5 items-center">

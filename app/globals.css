@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @layer base {
+  html,
+  body {
+    @apply h-full;
+  }
+
   .margin-max-screen {
     @apply mx-auto max-w-primary px-4 md:px-8 w-full;
   }

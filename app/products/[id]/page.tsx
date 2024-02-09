@@ -1,3 +1,3 @@
 export default function Product() {
-  return <div>Product</div>;
+  return <main className="flex-1 margin-max-screen">Product</main>;
 }

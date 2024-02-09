@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const HeaderLinks: React.FunctionComponent = () => {
   return (
-    <div className="flex font-medium gap-4 text-gray-700">
+    <div className="flex font-medium gap-5 text-gray-700">
       <Link
         href="/"
         className="hover:underline underline-offset-4 decoration-2"
