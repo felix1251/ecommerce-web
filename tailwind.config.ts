@@ -18,6 +18,9 @@ const config: Config = {
         secondary: "1180px",
         tertiary: "1000px",
       },
+      backgroundImage: {
+        "better-experence": "url(/better-experence-bg.png)",
+      },
     },
   },
   plugins: [],

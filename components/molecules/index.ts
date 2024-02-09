@@ -1,3 +1,4 @@
+export { default as BetterExperienceSection } from "./BetterExperienceSection";
 export { default as DynamicProductsSection } from "./DynamicProductsSection";
 export { default as FeaturedPostSection } from "./FeaturedPostSection";
 export { default as HeaderLinks } from "./HeaderLinks";

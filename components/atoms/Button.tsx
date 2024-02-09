@@ -5,6 +5,7 @@ interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "ghost";
   capitalize?: boolean;
   loading?: boolean;
+  size?: "sm" | "md" | "lg";
 }
 
 const conditionalVariant = (variant: string): string => {
@@ -20,18 +21,34 @@ const conditionalVariant = (variant: string): string => {
   }
 };
 
+const conditionalSize = (size: string): string => {
+  const defaultVariant = "px-6 py-2.5";
+
+  switch (size) {
+    case "md":
+      return defaultVariant;
+    case "sm":
+      return "px-5 py-2";
+    case "lg":
+      return "px-8 py-4";
+    default:
+      return defaultVariant;
+  }
+};
+
 const Button: React.FunctionComponent<IButtonProps> = ({
   children,
   variant = "primary",
   capitalize = true,
   loading = false,
+  size = "md",
   ...props
 }: IButtonProps) => {
   return (
     <button
       className={`flex gap-2 px-6 py-2.5 text-sm font-semibold rounded-md w-fit ${
         capitalize ? "uppercase" : ""
-      } ${conditionalVariant(variant)}`}
+      } ${conditionalVariant(variant)} ${conditionalSize(size)}`}
       {...props}
     >
       <span>{children}</span>

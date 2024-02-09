@@ -1,4 +1,5 @@
 import {
+  BetterExperienceSection,
   DynamicProductsSection,
   FeaturedPostSection,
   HomeMainSection,
@@ -14,6 +15,7 @@ export default function Home() {
       <NotesSection />
       <FeaturedPostSection />
       <WhatTheySayAboutUsSection />
+      <BetterExperienceSection />
     </main>
   );
 }
