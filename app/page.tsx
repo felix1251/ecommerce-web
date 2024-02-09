@@ -3,6 +3,7 @@ import {
   FeaturedPostSection,
   HomeMainSection,
   NotesSection,
+  WhatTheySayAboutUsSection,
 } from "@/molecules";
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       <DynamicProductsSection allowPagination />
       <NotesSection />
       <FeaturedPostSection />
+      <WhatTheySayAboutUsSection />
     </main>
   );
 }

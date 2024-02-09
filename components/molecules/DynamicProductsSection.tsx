@@ -63,6 +63,8 @@ const DynamicProductsSection: React.FunctionComponent<
             title={item.title}
             brand={item.brand}
             thumbnail={item.thumbnail}
+            price={item.price}
+            discountPercentage={item.discountPercentage}
           />
         ))}
       </div>
