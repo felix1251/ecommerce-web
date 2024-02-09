@@ -5,7 +5,7 @@ const TestimonyCard: React.FunctionComponent = () => {
   return (
     <div className="h-full grid place-items-center">
       <div className="flex flex-col gap-7 items-center text-center">
-        <h2 className="font-bold text-2xl text-gray-800">
+        <h2 className="font-bold text-2xl text-gray-800 mb-2">
           What they say about us
         </h2>
         <div className="flex flex-col gap-5 items-center">
