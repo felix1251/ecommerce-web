@@ -8,6 +8,30 @@ interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: "sm" | "md" | "lg";
 }
 
+const Button: React.FunctionComponent<IButtonProps> = ({
+  children,
+  variant = "primary",
+  capitalize = true,
+  loading = false,
+  size = "md",
+  ...props
+}: IButtonProps) => {
+  return (
+    <button
+      className={`flex gap-2 px-6 py-2.5 text-sm font-semibold rounded-md w-fit ${
+        capitalize ? "uppercase" : ""
+      } ${conditionalVariant(variant)} ${conditionalSize(size)}`}
+      {...props}
+    >
+      <span>{children}</span>
+      {loading && <Spinner />}
+    </button>
+  );
+};
+
+export default Button;
+
+// conditional styles
 const conditionalVariant = (variant: string): string => {
   const defaultVariant = "bg-primary text-white disabled:bg-gray-300";
 
@@ -35,26 +59,3 @@ const conditionalSize = (size: string): string => {
       return defaultVariant;
   }
 };
-
-const Button: React.FunctionComponent<IButtonProps> = ({
-  children,
-  variant = "primary",
-  capitalize = true,
-  loading = false,
-  size = "md",
-  ...props
-}: IButtonProps) => {
-  return (
-    <button
-      className={`flex gap-2 px-6 py-2.5 text-sm font-semibold rounded-md w-fit ${
-        capitalize ? "uppercase" : ""
-      } ${conditionalVariant(variant)} ${conditionalSize(size)}`}
-      {...props}
-    >
-      <span>{children}</span>
-      {loading && <Spinner />}
-    </button>
-  );
-};
-
-export default Button;
