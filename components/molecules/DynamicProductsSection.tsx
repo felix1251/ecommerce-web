@@ -9,7 +9,7 @@ import {
 import {
   fetchProducts,
   getProductList,
-  isProductLoading,
+  isProductListLoading,
 } from "@/redux/products/slice";
 import { ProductListResponse } from "@/redux/products/types";
 import { AppDispatch } from "@/redux/store";
@@ -29,7 +29,7 @@ const DynamicProductsSection: React.FunctionComponent<
 }: IDynamicProductsProps) => {
   const [page, setPage] = useState<number>(1);
   const dispatch = useDispatch<AppDispatch>();
-  const productLoading: boolean = useSelector(isProductLoading);
+  const productListLoading: boolean = useSelector(isProductListLoading);
   const productList: ProductListResponse = useSelector(getProductList);
   const canLoadMore: boolean = productList.limit * page < productList.total;
 
@@ -53,9 +53,6 @@ const DynamicProductsSection: React.FunctionComponent<
       />
       {!withExtraDescription && <hr />}
       <div className="grid px-9 sm:py-0 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
-        {productLoading &&
-          page == 1 &&
-          Array.from(Array(10)).map((_, i) => <ProductCardLoading key={i} />)}
         {productList.products.map((item) => (
           <ProductCard
             key={item.id}
@@ -67,12 +64,15 @@ const DynamicProductsSection: React.FunctionComponent<
             discountPercentage={item.discountPercentage}
           />
         ))}
+        {!productList.products.length &&
+          !canLoadMore &&
+          Array.from(Array(10)).map((_, i) => <ProductCardLoading key={i} />)}
       </div>
-      {allowPagination && (
+      {allowPagination && canLoadMore && (
         <div className="flex justify-center">
           <Button
-            loading={productLoading}
-            disabled={!canLoadMore || productLoading}
+            loading={productListLoading}
+            disabled={!canLoadMore || productListLoading}
             onClick={loadMore}
             variant="ghost"
           >

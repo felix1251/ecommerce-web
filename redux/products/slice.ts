@@ -20,8 +20,9 @@ const ProductList: ProductListResponse = {
 
 const initialState: ProductsState = {
   product: null,
+  productLoading: false,
   list: ProductList,
-  loading: false,
+  listLoading: false,
   error: null,
 };
 
@@ -82,7 +83,7 @@ export const productSlice = createSlice({
   extraReducers(builder) {
     builder
       .addCase(fetchProducts.pending, (state, _action) => {
-        state.loading = true;
+        state.listLoading = true;
       })
       .addCase(fetchProducts.fulfilled, (state, action) => {
         if (
@@ -100,21 +101,21 @@ export const productSlice = createSlice({
           state.list = initialState.list;
           state.list = action.payload;
         }
-        state.loading = false;
+        state.listLoading = false;
       })
       .addCase(fetchProducts.rejected, (state, action) => {
-        state.loading = false;
+        state.listLoading = false;
         state.error = action.error.message;
       })
       .addCase(fetchSingleProduct.pending, (state, _action) => {
-        state.loading = true;
+        state.productLoading = true;
       })
       .addCase(fetchSingleProduct.fulfilled, (state, action) => {
         state.product = action.payload;
-        state.loading = false;
+        state.productLoading = false;
       })
       .addCase(fetchSingleProduct.rejected, (state, action) => {
-        state.loading = false;
+        state.productLoading = false;
         state.error = action.error.message;
       });
   },
@@ -124,7 +125,9 @@ export const getProductList = (state: RootState): ProductListResponse =>
   state.products.list;
 export const getSingleProduct = (state: RootState): ProductResponse | null =>
   state.products.product;
+export const isProductListLoading = (state: RootState): boolean =>
+  state.products.listLoading;
 export const isProductLoading = (state: RootState): boolean =>
-  state.products.loading;
+  state.products.productLoading;
 
 export default productSlice.reducer;

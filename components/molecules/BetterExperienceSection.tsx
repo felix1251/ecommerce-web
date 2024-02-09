@@ -2,7 +2,7 @@ import { Button } from "@/atoms";
 
 const BetterExperienceSection: React.FunctionComponent = () => {
   return (
-    <section className="bg-better-experence min-h-screen w-full bg-no-repeat bg-cover bg-right lg:bg-center grid place-items-center bg-fixed">
+    <section className="bg-better-experence min-h-screen w-full bg-no-repeat bg-cover bg-center grid place-items-center bg-fixed">
       <div className="margin-small-screen flex flex-col items-center w-full gap-12">
         <h2 className="text-primary text-lg md:text-xl text-center font-bold">
           Designing Better Experience

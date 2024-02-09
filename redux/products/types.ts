@@ -21,8 +21,9 @@ export interface ProductListResponse {
 
 export interface ProductsState {
   list: ProductListResponse;
-  loading: boolean;
+  listLoading: boolean;
   product: ProductResponse | null;
+  productLoading: boolean;
   error: any;
 }
 
@@ -33,5 +34,5 @@ export interface ProductsPayload {
 }
 
 export interface SingleProductPayload {
-  id: number;
+  id: string;
 }

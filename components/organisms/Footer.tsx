@@ -2,7 +2,7 @@ import { SubscribeEmail } from "@/molecules";
 
 const Footer: React.FunctionComponent = () => {
   return (
-    <footer className="margin-min-screen py-16 flex flex-col md:flex-row gap-7 justify-between w-full flex-wrap">
+    <footer className="margin-min-screen py-16 flex flex-col sm:flex-row gap-7 justify-between w-full flex-wrap">
       <ul className="space-y-3 font-medium text-zinc-500">
         <li className="font-bold text-gray-800">Company Info</li>
         <li>About us</li>
