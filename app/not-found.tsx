@@ -1,5 +1,5 @@
 const NotFoundPage = () => {
-  return <main className="">not-found</main>;
+  return <main className="margin-max-screen">not-found</main>;
 };
 
 export default NotFoundPage;

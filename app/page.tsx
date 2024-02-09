@@ -4,6 +4,7 @@ import {
   FeaturedPostSection,
   HomeMainSection,
   NotesSection,
+  SocialSection,
   WhatTheySayAboutUsSection,
 } from "@/molecules";
 
@@ -16,6 +17,7 @@ export default function Home() {
       <FeaturedPostSection />
       <WhatTheySayAboutUsSection />
       <BetterExperienceSection />
+      <SocialSection />
     </main>
   );
 }
