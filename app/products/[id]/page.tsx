@@ -11,7 +11,11 @@ export default function Product({ params }: IProductProps) {
       <div className="bg-zinc-50">
         <Breadcrumb />
         <SingleProduct id={params.id} />
-        <DynamicProductsSection withExtraDescription={false} />
+        <DynamicProductsSection
+          withExtraDescription={false}
+          limit={8}
+          gridCol={"lg:grid-cols-4"}
+        />
       </div>
     </main>
   );

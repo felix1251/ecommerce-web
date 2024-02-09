@@ -4,7 +4,7 @@ import { ImageWithDescription } from "@/atoms";
 const HomeMainSection: React.FunctionComponent = () => {
   return (
     <section className="w-full py-16 margin-min-screen">
-      <div className="flex flex-col md:flex-row w-full gap-4">
+      <div className="flex flex-col justify-center md:flex-row gap-4">
         <ImageWithDescription title="Furniture" items={5}>
           <img
             className="w-full h-60 sm:h-96 md:h-full md:w-fit object-cover object-center"

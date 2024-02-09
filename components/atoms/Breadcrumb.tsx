@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Breadcrumb: React.FunctionComponent = () => {
   return (
-    <div className="w-full margin-max-screen pt-10">
+    <div className="w-full margin-min-screen pt-10">
       <div className="flex items-center gap-2">
         <Link className="font-bold text-gray-800" href="/">
           Home

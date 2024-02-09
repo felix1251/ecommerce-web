@@ -14,7 +14,7 @@ const SocialSection: React.FunctionComponent<ISocialSectionProps> = ({
   return (
     <section className={`w-full ${bgColor}`}>
       <div className="py-16">
-        <div className="flex justify-between margin-min-screen ">
+        <div className="flex justify-between items-center margin-min-screen ">
           <h2 className="font-bold text-3xl text-gray-800">Bandage</h2>
           <div className="text-primary flex gap-5">
             <FacebookRounded style={{ fontSize: 30 }} />

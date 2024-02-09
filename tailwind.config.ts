@@ -15,8 +15,8 @@ const config: Config = {
       },
       maxWidth: {
         primary: "1380px",
-        secondary: "1180px",
-        tertiary: "1000px",
+        secondary: "1280px",
+        tertiary: "1180px",
       },
       backgroundImage: {
         "better-experence": "url(/better-experence-bg.png)",

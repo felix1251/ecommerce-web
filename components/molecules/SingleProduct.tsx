@@ -27,7 +27,7 @@ const SingleProduct: React.FunctionComponent<ISingleProduct> = ({
   }, [dispatch, id]);
 
   return (
-    <div className="py-10 margin-max-screen">
+    <div className="py-10 margin-min-screen">
       {!product || loading ? (
         <div>Loading....</div>
       ) : (

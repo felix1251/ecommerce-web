@@ -19,6 +19,8 @@ import { useDispatch, useSelector } from "react-redux";
 export interface IDynamicProductsProps {
   allowPagination?: boolean;
   withExtraDescription?: boolean;
+  limit?: number;
+  gridCol?: string;
 }
 
 const DynamicProductsSection: React.FunctionComponent<
@@ -26,6 +28,8 @@ const DynamicProductsSection: React.FunctionComponent<
 > = ({
   allowPagination = false,
   withExtraDescription = true,
+  limit = 10,
+  gridCol = "lg:grid-cols-5",
 }: IDynamicProductsProps) => {
   const [page, setPage] = useState<number>(1);
   const dispatch = useDispatch<AppDispatch>();
@@ -34,8 +38,8 @@ const DynamicProductsSection: React.FunctionComponent<
   const canLoadMore: boolean = productList.limit * page < productList.total;
 
   useEffect(() => {
-    dispatch(fetchProducts({ page: page, append: true }));
-  }, [dispatch, page]);
+    dispatch(fetchProducts({ page: page, append: true, limit: limit }));
+  }, [dispatch, page, limit]);
 
   const loadMore = () => {
     if (canLoadMore) setPage((pg) => pg + 1);
@@ -52,7 +56,9 @@ const DynamicProductsSection: React.FunctionComponent<
         label="Bestseller Products"
       />
       {!withExtraDescription && <hr />}
-      <div className="grid px-9 sm:py-0 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+      <div
+        className={`grid px-9 sm:py-0 sm:grid-cols-2 md:grid-cols-4 ${gridCol} gap-6`}
+      >
         {productList.products.map((item) => (
           <ProductCard
             key={item.id}

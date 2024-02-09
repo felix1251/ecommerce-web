@@ -28,7 +28,7 @@ const PostCard: React.FunctionComponent<IPostCardProps> = ({
         <img
           className="h-full w-full object-cover group-hover:scale-105 ease-in-out transition-transform duration-300"
           src={imgUrl}
-          alt="post-one.png"
+          alt={imgUrl}
         />
       </div>
       <div className="flex flex-col py-5 px-7 gap-2.5">
