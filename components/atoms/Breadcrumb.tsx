@@ -9,10 +9,10 @@ const Breadcrumb: React.FunctionComponent = () => {
           Home
         </Link>
         <ArrowForwardIosIcon
-          className="text-zinc-300"
+          className="text-neutral-300"
           style={{ fontSize: 23 }}
         />
-        <span className="font-bold text-zinc-300">Shop</span>
+        <span className="font-bold text-neutral-300">Shop</span>
       </div>
     </div>
   );
