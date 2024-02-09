@@ -19,7 +19,7 @@ const SingleProduct: React.FunctionComponent<ISingleProduct> = ({
     dispatch(fetchSingleProduct({ id }));
   }, [dispatch, id]);
 
-  return <div className="py-16 margin-max-screen">SingleProduct</div>;
+  return <div className="py-10 margin-max-screen">SingleProduct</div>;
 };
 
 export default SingleProduct;

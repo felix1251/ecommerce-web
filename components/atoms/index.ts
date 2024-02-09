@@ -1,3 +1,4 @@
+export { default as Breadcrumb } from "./Breadcrumb";
 export { default as Button } from "./Button";
 export { default as HamburgerIcon } from "./HamburgerIcon";
 export { default as HeaderLink } from "./HeaderLink";
