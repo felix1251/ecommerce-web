@@ -1,9 +1,9 @@
 "use client";
 
+import { HamburgerIcon } from "@/atoms";
 import { HeaderActions, HeaderLinks, MobileNav } from "@/molecules";
 import Link from "next/link";
 import { useState } from "react";
-import { HamburgerIcon } from "../atoms";
 
 const Header: React.FunctionComponent = () => {
   const [mobileNavOpen, setMobileNavOpen] = useState<boolean>(false);
