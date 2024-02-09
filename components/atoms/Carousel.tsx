@@ -13,9 +13,9 @@ const Carousel: React.FunctionComponent<ICarousel> = ({
   const [displayImage, setDisplayImage] = useState<string>(images[0]);
 
   return (
-    <div className="flex flex-col gap-4 w-[38rem]">
+    <div className="flex flex-col gap-4 w-[35rem]">
       <img
-        className="h-[32rem] w-full border rouded-sm object-cover object-top"
+        className="h-[26rem] w-full border rouded-sm object-cover object-top"
         src={displayImage}
         alt="displayImage"
       />
@@ -24,7 +24,7 @@ const Carousel: React.FunctionComponent<ICarousel> = ({
           <button key={url} onClick={() => setDisplayImage(url)}>
             <img
               src={url}
-              className={`rounded-sm max-w-32 min-w-32 border-2 max-h-28 min-h-28 overflow-hidden object-cover object-top ${
+              className={`rounded-sm max-w-28 min-w-28 border-2 max-h-24 min-h-24 overflow-hidden object-cover object-top ${
                 displayImage === url ? "border-primary" : ""
               }`}
               alt={url}
