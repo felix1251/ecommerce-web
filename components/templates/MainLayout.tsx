@@ -1,4 +1,4 @@
-import { Banner, Header } from "@/organisms";
+import { Banner, Footer, Header } from "@/organisms";
 
 interface IMainLayoutProps {
   children: React.ReactNode;
@@ -12,6 +12,7 @@ const MainLayout: React.FunctionComponent<IMainLayoutProps> = ({
       <Banner />
       <Header />
       {children}
+      <Footer />
     </>
   );
 };
