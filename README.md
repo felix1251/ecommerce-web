@@ -38,7 +38,7 @@ Atomic Design offers a clear and hierarchical structure for organizing UI elemen
 
 3. Organisms - Combining molecules together to form organisms that make up a distinct section of an interface (i.e. navigation bar)
 
-4. Templates- Consisting mostly of groups of organisms to form a page — where clients can see a final design in place.
+4. Templates - Consisting mostly of groups of organisms to form a page — where clients can see a final design in place.
 
 5. Pages - An ecosystem that views different template renders. We can create multiple ecosystems into a single environment — the application.
 
