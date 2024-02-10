@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { discountedPrice, round } from "@/utils";
+import { discountedPrice, roundPrice } from "@/utils";
 import Link from "next/link";
 import React from "react";
 
@@ -32,9 +32,9 @@ const ProductCard: React.FunctionComponent<IProductCardProps> = ({
         <span className="text-sm text-gray-500 font-bold">{brand}</span>
       </div>
       <div className="flex gap-2 w-full justify-center font-bold text-sm">
-        <span className="text-zinc-400">${round(price, 2)}</span>
+        <span className="text-zinc-400">{roundPrice(price)}</span>
         <span className="text-secondary">
-          ${discountedPrice(price, discountPercentage)}
+          {discountedPrice(price, discountPercentage)}
         </span>
       </div>
     </Link>

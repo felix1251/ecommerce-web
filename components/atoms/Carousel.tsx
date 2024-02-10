@@ -27,12 +27,12 @@ const Carousel: React.FunctionComponent<ICarousel> = ({
   };
 
   return (
-    <div className="flex flex-col gap-6 w-[35rem]">
+    <div className="flex flex-col gap-6 min-w-[35rem]">
       <div className="relative h-[27rem]">
         {canNext && (
           <button onClick={next} className="right-7 top-[45%] absolute">
             <ArrowForwardIosIcon
-              className="text-gray-200"
+              className="text-gray-200 hover:text-primary transition-colors duration-200 ease-in-out"
               style={{ fontSize: 50 }}
             />
           </button>
@@ -40,7 +40,7 @@ const Carousel: React.FunctionComponent<ICarousel> = ({
         {canPrev && (
           <button onClick={prev} className="left-7 top-[45%] absolute">
             <ArrowBackIosIcon
-              className="text-gray-200"
+              className="text-gray-200 hover:text-primary transition-colors duration-200 ease-in-out"
               style={{ fontSize: 50 }}
             />
           </button>
