@@ -50,6 +50,6 @@ Combining molecules together to form organisms that make up a distinct section o
 
 ## Light house scores
 
-### Product view (ex. /products/:id)
+Product view (ex. /products/:id)
 
-![product pahe](/images/lighthouse%20score.png)
+![product page](/images/lighthouse%20score.png)
