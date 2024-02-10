@@ -8,7 +8,7 @@ const initialState: WishlistState = {
 };
 
 export const wishlistSlice = createSlice({
-  name: "products",
+  name: "whishlist",
   initialState,
   reducers: {
     addToWishlist(state, action) {
