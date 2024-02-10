@@ -1,23 +1,48 @@
-import { Button } from "@/atoms";
+"use client";
+
+import { Button, RoundedButtonIcon } from "@/atoms";
+import { RootState } from "@/redux/store";
+import {
+  addToWishlist,
+  isProductExistOnWishlist,
+} from "@/redux/wishlist/slice";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import ShoppingCartOutlined from "@mui/icons-material/ShoppingCartOutlined";
+import { useDispatch, useSelector } from "react-redux";
 
-const ProductDetailsOptions: React.FunctionComponent = () => {
+interface IProductDetailsOptionsProps {
+  productId: number;
+}
+
+const ProductDetailsOptions: React.FunctionComponent<
+  IProductDetailsOptionsProps
+> = ({ productId }: IProductDetailsOptionsProps) => {
+  const dispath = useDispatch();
+
+  const wishlistExist = useSelector<RootState, boolean>((state: RootState) =>
+    isProductExistOnWishlist(state, productId)
+  );
+
+  const addProductToWishlist = () => dispath(addToWishlist(productId));
+
   return (
     <div className="w-full flex flex-col gap-6">
       <hr className="border border-zinc-300" />
       <div className="flex gap-5 items-center">
         <Button size="lg">Select Options</Button>
-        <button className="p-2 rounded-full border border-zinc-600 text-zinc-600 hover:text-primary hover:border-primary transition-colors duration-200">
+        <RoundedButtonIcon
+          onClick={addProductToWishlist}
+          disabled={wishlistExist}
+        >
           <FavoriteBorderIcon />
-        </button>
-        <button className="p-2 rounded-full border border-zinc-600 text-zinc-600 hover:text-primary hover:border-primary transition-colors duration-200">
+        </RoundedButtonIcon>
+        <RoundedButtonIcon disabled={false}>
           <ShoppingCartOutlined />
-        </button>
-        <button className="p-2 rounded-full border border-zinc-600 text-zinc-600 hover:text-primary hover:border-primary transition-colors duration-200">
+        </RoundedButtonIcon>
+        <RoundedButtonIcon>
           <RemoveRedEyeIcon />
-        </button>
+        </RoundedButtonIcon>
       </div>
     </div>
   );
