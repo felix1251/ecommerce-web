@@ -33,7 +33,7 @@ const ProductDetailsOptions: React.FunctionComponent<
   const addProductToCart = () => dispath(addToCart(product));
 
   return (
-    <div className="w-full flex flex-col gap-8">
+    <div className="w-full flex flex-col gap-4 md:gap-8">
       <hr className="border border-zinc-300" />
       <div className="flex gap-3 sm:gap-5 items-center w-full">
         <Button size="lg">Select Options</Button>

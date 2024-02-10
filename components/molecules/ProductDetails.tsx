@@ -14,7 +14,7 @@ const ProductDetails: React.FunctionComponent<IProductDetailsProps> = ({
 
   return (
     <div className="grid py-5 gap-5 w-full">
-      <div className="flex flex-col gap-5 w-full">
+      <div className="flex flex-col gap-3 md:gap-5 w-full">
         <h2 className="text-2xl md:text-4xl text-gray-800">{product.title}</h2>
         <div className="flex gap-3 items-center">
           <Rating
@@ -27,7 +27,7 @@ const ProductDetails: React.FunctionComponent<IProductDetailsProps> = ({
             10 reviews
           </span>
         </div>
-        <div className="mt-2 space-y-3">
+        <div className="mt-1 md:mt-2 space-y-3">
           <div className="flex gap-3">
             {product.discountPercentage > 0 && (
               <span className="text-2xl md:text-4xl line-through font-bold text-zinc-400">

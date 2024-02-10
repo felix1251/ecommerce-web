@@ -8,6 +8,10 @@
     @apply h-full;
   }
 
+  body {
+    @apply flex flex-col;
+  }
+
   .margin-max-screen {
     @apply mx-auto max-w-primary px-8 w-full;
   }
