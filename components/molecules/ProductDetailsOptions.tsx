@@ -35,7 +35,7 @@ const ProductDetailsOptions: React.FunctionComponent<
   return (
     <div className="w-full flex flex-col gap-6">
       <hr className="border border-zinc-300" />
-      <div className="flex gap-5 items-center">
+      <div className="flex gap-3 sm:gap-5 items-center w-full">
         <Button size="lg">Select Options</Button>
         <RoundedButtonIcon
           onClick={addProductToWishlist}

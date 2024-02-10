@@ -54,7 +54,7 @@ const conditionalSize = (size: string): string => {
     case "sm":
       return "px-5 py-2";
     case "lg":
-      return "px-5 py-3 md:px-8 ,d:py-4";
+      return "px-3 py-3 md:px-8 md:py-4";
     default:
       return defaultVariant;
   }

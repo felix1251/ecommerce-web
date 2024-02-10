@@ -56,7 +56,6 @@ const CartCard: React.FunctionComponent<ICartCard> = ({
             </span>
           </div>
           <div className="flex items-center gap-4">
-            <span className="font-medium text-gray-800">QTY: {quantity}</span>
             <div className="flex items-center gap-1.5">
               <button
                 onClick={decreaseQuantity}
@@ -71,6 +70,7 @@ const CartCard: React.FunctionComponent<ICartCard> = ({
                 <AddIcon style={{ fontSize: 22 }} />
               </button>
             </div>
+            <span className="font-medium text-gray-800">QTY: {quantity}</span>
           </div>
         </div>
         <button
