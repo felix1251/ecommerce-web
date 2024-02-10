@@ -27,8 +27,8 @@ const Carousel: React.FunctionComponent<ICarousel> = ({
   };
 
   return (
-    <div className="flex flex-col gap-6 min-w-[35rem]">
-      <div className="relative h-[27rem]">
+    <div className="flex flex-col gap-4 md:gap-6 w-full lg:min-w-[35rem]">
+      <div className="relative h-[20rem] sm:h-[24rem] md:h-[27rem]">
         {canNext && (
           <button onClick={next} className="right-7 top-[45%] absolute">
             <ArrowForwardIosIcon
@@ -51,12 +51,12 @@ const Carousel: React.FunctionComponent<ICarousel> = ({
           alt="displayImage"
         />
       </div>
-      <div className="flex gap-4 w-full overflow-x-auto">
+      <div className="flex gap-2 md:gap-4 w-full overflow-x-auto">
         {images.map((url, index) => (
           <button key={url} onClick={() => setCurrentIndex(index)}>
             <img
               src={url}
-              className={`rounded-sm max-w-28 min-w-28 border-2 max-h-24 min-h-24 overflow-hidden object-cover object-top ${
+              className={`rounded-sm max-w-20 md:max-w-24 min-w-24 md:min-w-28 border-2 max-h-24 min-h-24 overflow-hidden object-cover object-top ${
                 images[currentIndex] === url ? "border-primary" : ""
               }`}
               alt={url}

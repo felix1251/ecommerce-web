@@ -10,7 +10,7 @@ const RoundedButtonIcon: React.FunctionComponent<IRoundedButtonIconProps> = ({
   return (
     <button
       {...props}
-      className="p-2 rounded-full border border-zinc-600 text-zinc-600 hover:text-primary hover:border-primary transition-colors duration-200 disabled:border-zinc-200 disabled:text-zinc-200 disabled:cursor-not-allowed"
+      className="p-1 md:p-2 rounded-full border border-zinc-600 text-zinc-600 hover:text-primary hover:border-primary transition-colors duration-200 disabled:border-zinc-200 disabled:text-zinc-200 disabled:cursor-not-allowed"
     >
       {children}
     </button>

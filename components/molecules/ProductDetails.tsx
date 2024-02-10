@@ -13,9 +13,9 @@ const ProductDetails: React.FunctionComponent<IProductDetailsProps> = ({
   const inStock: boolean = product.stock > 0;
 
   return (
-    <div className="grid py-5 w-full">
+    <div className="grid py-5 gap-5 w-full">
       <div className="flex flex-col gap-5 w-full">
-        <h2 className="text-4xl text-gray-800">{product.title}</h2>
+        <h2 className="text-2xl md:text-4xl text-gray-800">{product.title}</h2>
         <div className="flex gap-3 items-center">
           <Rating
             name="user-star"
@@ -23,20 +23,22 @@ const ProductDetails: React.FunctionComponent<IProductDetailsProps> = ({
             value={product.rating}
             size="large"
           />
-          <span className="font-bold text-gray-500 text-xl">10 reviews</span>
+          <span className="font-bold text-gray-500 text-lg md:text-xl">
+            10 reviews
+          </span>
         </div>
         <div className="mt-2 space-y-3">
           <div className="flex gap-3">
             {product.discountPercentage > 0 && (
-              <span className="text-4xl line-through font-bold text-zinc-400">
+              <span className="text-2xl md:text-4xl line-through font-bold text-zinc-400">
                 {roundPrice(product.price)}
               </span>
             )}
-            <span className="text-4xl font-bold text-gray-800">
+            <span className="text-2xl md:text-4xl font-bold text-gray-800">
               {discountedPrice(product.price, product.discountPercentage)}
             </span>
           </div>
-          <div className="flex gap-2 font-bold text-zinc-500 text-xl">
+          <div className="flex gap-2 font-bold text-zinc-500 text-base md:text-xl">
             Availability:{" "}
             <span className={inStock ? "text-primary" : "text-red-500"}>
               {inStock ? "In Stock" : "Out of Stock"} ({product.stock})

@@ -34,7 +34,7 @@ const ProductView: React.FunctionComponent<IProductViewProps> = ({
       {!product || loading ? (
         <div>Loading....</div>
       ) : (
-        <div className="w-full flex gap-16">
+        <div className="w-full justify-center flex flex-col lg:flex-row gap-10 md:gap-16">
           <Carousel images={product.images} />
           <ProductDetails product={product} />
         </div>
