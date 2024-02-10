@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import toast from "react-hot-toast";
 
 const initialState: CartsState = {
   list: [],
@@ -13,6 +14,7 @@ export const cartsSlice = createSlice({
       // make the list always unique to avoid duplicate record-
       const makeListUnique = new Set(newList);
       state.list = Array.from(makeListUnique);
+      toast.success("Successfully added to Carts", { duration: 3000 });
     },
     removeFromCart(state, action) {
       const newList = state.list.filter((cart) => cart.id != action.payload);
