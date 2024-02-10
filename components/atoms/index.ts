@@ -12,3 +12,4 @@ export { default as ProductCardLoading } from "./ProductCardLoading";
 export { default as RoundedButtonIcon } from "./RoundedButtonIcon";
 export { default as SectionDescription } from "./SectionDescription";
 export { default as Spinner } from "./Spinner";
+export { default as WishlistCard } from "./WishlistCard";

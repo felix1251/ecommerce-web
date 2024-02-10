@@ -1,5 +1,9 @@
 export function discountedPrice(price: number, percent: number): string {
-  return toMoneyFormat(price - (percent / 100) * price);
+  return toMoneyFormat(priceCalc(price, percent));
+}
+
+export function priceCalc(price: number, percent: number) {
+  return price - (percent / 100) * price;
 }
 
 export function roundPrice(value: number): string {

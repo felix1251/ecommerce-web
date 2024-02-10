@@ -27,9 +27,11 @@ const ProductDetails: React.FunctionComponent<IProductDetailsProps> = ({
         </div>
         <div className="mt-2 space-y-3">
           <div className="flex gap-3">
-            <span className="text-4xl line-through font-bold text-zinc-400">
-              {roundPrice(product.price)}
-            </span>
+            {product.discountPercentage > 0 && (
+              <span className="text-4xl line-through font-bold text-zinc-400">
+                {roundPrice(product.price)}
+              </span>
+            )}
             <span className="text-4xl font-bold text-gray-800">
               {discountedPrice(product.price, product.discountPercentage)}
             </span>

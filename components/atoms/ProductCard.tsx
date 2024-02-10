@@ -32,7 +32,9 @@ const ProductCard: React.FunctionComponent<IProductCardProps> = ({
         <span className="text-sm text-gray-500 font-bold">{brand}</span>
       </div>
       <div className="flex gap-2 w-full justify-center font-bold text-sm">
-        <span className="text-zinc-400">{roundPrice(price)}</span>
+        {discountPercentage > 0 && (
+          <span className="text-zinc-400">{roundPrice(price)}</span>
+        )}
         <span className="text-secondary">
           {discountedPrice(price, discountPercentage)}
         </span>

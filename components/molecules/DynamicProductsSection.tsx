@@ -63,15 +63,15 @@ const DynamicProductsSection: React.FunctionComponent<
       <div
         className={`grid px-9 sm:py-0 sm:grid-cols-2 md:grid-cols-4 ${gridCol} gap-6`}
       >
-        {productList.products.map((item) => (
+        {productList.products.map((p) => (
           <ProductCard
-            key={item.id}
-            id={item.id}
-            title={item.title}
-            brand={item.brand}
-            thumbnail={item.thumbnail}
-            price={item.price}
-            discountPercentage={item.discountPercentage}
+            key={p.id}
+            id={p.id}
+            title={p.title}
+            brand={p.brand}
+            thumbnail={p.thumbnail}
+            price={p.price}
+            discountPercentage={p.discountPercentage}
           />
         ))}
         {!productList.products.length &&

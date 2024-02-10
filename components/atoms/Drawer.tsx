@@ -40,7 +40,7 @@ const Drawer: React.FunctionComponent<IDrawerProps> = ({
                 leaveTo="translate-x-full"
               >
                 <Dialog.Panel className="pointer-events-auto w-screen max-w-md">
-                  <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
+                  <div className="flex h-full flex-col overflow-y-scroll bg-white pt-6 shadow-xl">
                     <div className="px-4 sm:px-6">
                       <div className="flex items-center justify-between">
                         <Dialog.Title className="font-semibold leading-6 text-lg text-gray-800">
@@ -59,7 +59,7 @@ const Drawer: React.FunctionComponent<IDrawerProps> = ({
                         </div>
                       </div>
                     </div>
-                    <div className="relative mt-6 flex-1 px-4 sm:px-6">
+                    <div className="relative mt-6 flex-1 px-4 sm:px-6 overflow-auto">
                       {children}
                     </div>
                   </div>

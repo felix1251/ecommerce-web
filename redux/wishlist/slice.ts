@@ -1,3 +1,4 @@
+import { priceCalc } from "@/utils";
 import { createSelector, createSlice } from "@reduxjs/toolkit";
 import toast from "react-hot-toast";
 import { RootState } from "../store";
@@ -30,15 +31,20 @@ export const wishlistSlice = createSlice({
   },
 });
 
-export const getWishlistIds = (state: RootState): SingleWishlist[] =>
+export const getWishlistData = (state: RootState): SingleWishlist[] =>
   state.wishlist.data;
 
 export const getWishlistCount = (state: RootState): number =>
   state.wishlist.data.length;
 
+export const getWishlistTotalSum = (state: RootState): number =>
+  state.wishlist.data.reduce((accumulator, wishlist) => {
+    return accumulator + priceCalc(wishlist.price, wishlist.discountPercentage);
+  }, 0);
+
 export const isProductExistOnWishlist: IsProductExistOnWishlistType =
   createSelector(
-    [getWishlistIds, (_wishlist, productId: number) => productId],
+    [getWishlistData, (_wishlist, productId: number) => productId],
     (wishlist: SingleWishlist[], productId: number) =>
       wishlist.filter((wishlist) => wishlist.id == productId).length > 0
   );
