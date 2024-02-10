@@ -1,3 +1,4 @@
+import { priceCalc } from "@/utils";
 import { createSelector, createSlice } from "@reduxjs/toolkit";
 import toast from "react-hot-toast";
 import { RootState } from "../store";
@@ -17,11 +18,12 @@ export const cartsSlice = createSlice({
       // make the list always unique to avoid duplicate record-
       const makeListUnique: Set<SingleCart> = new Set(newList);
       state.data = Array.from(makeListUnique);
-      toast.success("Successfully added to Cart", { duration: 3000 });
+      toast.success("Successfully added to cart", { duration: 3000 });
     },
     removeFromCart(state, action) {
       const newList = state.data.filter((cart) => cart.id != action.payload);
       state.data = newList;
+      toast.success("Successfully remove item from cart", { duration: 3000 });
     },
     increseCartQuantity(state, action) {},
     deccreseCartQuantity(state, action) {},
@@ -31,6 +33,14 @@ export const cartsSlice = createSlice({
 export const getCartlist = (state: RootState): SingleCart[] => state.carts.data;
 export const getCartCount = (state: RootState): number =>
   state.carts.data.length;
+
+export const getCartlistTotalSum = (state: RootState): number =>
+  state.carts.data.reduce((accumulator, cart) => {
+    return (
+      accumulator +
+      priceCalc(cart.price, cart.discountPercentage) * cart.quantity
+    );
+  }, 0);
 
 export const isProductExistOnCart: IsProductExistOnCartType = createSelector(
   [getCartlist, (_carts, productId: number) => productId],

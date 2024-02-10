@@ -21,12 +21,14 @@ export const wishlistSlice = createSlice({
       // make the list always unique to avoid duplicate ids
       const makeListUnique: Set<SingleWishlist> = new Set(newList);
       state.data = Array.from(makeListUnique);
-      toast.success("Successfully added to Wishlist", { duration: 3000 });
+      toast.success("Successfully added to wishlist", { duration: 3000 });
     },
     removeFromWishlist(state, action) {
       const newList = state.data.filter((item) => item.id != action.payload);
-
       state.data = newList;
+      toast.success("Successfully remove item from wishlist", {
+        duration: 3000,
+      });
     },
   },
 });

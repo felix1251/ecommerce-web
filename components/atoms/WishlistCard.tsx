@@ -22,7 +22,7 @@ const WishlistCard: React.FunctionComponent<IWislistCard> = ({
   discountPercentage,
 }) => {
   const dispatch = useDispatch<AppDispatch>();
-  const remove = () => dispatch(removeFromWishlist(id));
+  const removeWislist = () => dispatch(removeFromWishlist(id));
 
   return (
     <div className="flex gap-5 py-2.5">
@@ -46,7 +46,7 @@ const WishlistCard: React.FunctionComponent<IWislistCard> = ({
           </div>
         </div>
         <button
-          onClick={remove}
+          onClick={removeWislist}
           className="text-gray-400 hover:text-red-600 transition-colors duration-100 ease-in-out"
         >
           <DeleteForeverIcon style={{ fontSize: 30 }} />
