@@ -1,4 +1,4 @@
-[Deployed Website][https://next-basket-nine.vercel.app/]
+[Deployed Website](https://next-basket-nine.vercel.app/)
 
 ## Dev Environment
 
