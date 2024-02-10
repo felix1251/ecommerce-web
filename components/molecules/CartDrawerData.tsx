@@ -34,6 +34,7 @@ const CartDrawerData: React.FunctionComponent = () => {
             thumbnail={w.thumbnail}
             price={w.price}
             discountPercentage={w.discountPercentage}
+            quantity={w.quantity}
           />
         ))}
       </div>

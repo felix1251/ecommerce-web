@@ -25,8 +25,19 @@ export const cartsSlice = createSlice({
       state.data = newList;
       toast.success("Successfully remove item from cart", { duration: 3000 });
     },
-    increseCartQuantity(state, action) {},
-    deccreseCartQuantity(state, action) {},
+    increseCartQuantity(state, action) {
+      const cartIndex = state.data.findIndex(
+        (cart) => cart.id == action.payload
+      );
+      state.data[cartIndex].quantity++;
+    },
+    deccreseCartQuantity(state, action) {
+      const cartIndex = state.data.findIndex(
+        (cart) => cart.id == action.payload
+      );
+      if (state.data[cartIndex].quantity <= 1) return;
+      state.data[cartIndex].quantity--;
+    },
   },
 });
 
@@ -52,6 +63,7 @@ export const {
   addToCart,
   removeFromCart,
   increseCartQuantity,
+
   deccreseCartQuantity,
 } = cartsSlice.actions;
 
