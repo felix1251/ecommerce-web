@@ -27,8 +27,8 @@ const Carousel: React.FunctionComponent<ICarousel> = ({
   };
 
   return (
-    <div className="flex flex-col gap-4 md:gap-6 w-full lg:min-w-[35rem]">
-      <div className="relative h-[20rem] sm:h-[24rem] md:h-[27rem]">
+    <div className="flex flex-col gap-4 md:gap-6 w-full lg:min-w-[34rem]">
+      <div className="relative h-[20rem] sm:h-[24rem] md:h-[28rem]">
         {canNext && (
           <button onClick={next} className="right-7 top-[45%] absolute">
             <ArrowForwardIosIcon

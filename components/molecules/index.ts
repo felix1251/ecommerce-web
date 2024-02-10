@@ -12,6 +12,7 @@ export { default as NotesSection } from "./NotesSection";
 export { default as ProductDetails } from "./ProductDetails";
 export { default as ProductDetailsOptions } from "./ProductDetailsOptions";
 export { default as ProductView } from "./ProductView";
+export { default as ProductViewLoading } from "./ProductViewLoading";
 export { default as SocialSection } from "./SocialSection";
 export { default as SubscribeEmail } from "./SubscribeEmail";
 export { default as Testimony } from "./Testimony";

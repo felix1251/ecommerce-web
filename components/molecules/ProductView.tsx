@@ -1,7 +1,7 @@
 "use client";
 
 import { Carousel } from "@/atoms";
-import { ProductDetails } from "@/molecules";
+import { ProductDetails, ProductViewLoading } from "@/molecules";
 import {
   fetchSingleProduct,
   getSingleProduct,
@@ -32,7 +32,7 @@ const ProductView: React.FunctionComponent<IProductViewProps> = ({
   return (
     <div className="py-10 margin-min-screen">
       {!product || loading ? (
-        <div>Loading....</div>
+        <ProductViewLoading />
       ) : (
         <div className="w-full justify-center flex flex-col lg:flex-row gap-10 md:gap-16">
           <Carousel images={product.images} />
