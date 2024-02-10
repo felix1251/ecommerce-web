@@ -1,4 +1,5 @@
 import { createSelector, createSlice } from "@reduxjs/toolkit";
+import toast from "react-hot-toast";
 import { RootState } from "../store";
 import { IsProductExistOnWishlistType, WishlistState } from "./types";
 
@@ -15,6 +16,7 @@ export const wishlistSlice = createSlice({
       // make the list always unique to avoid duplicate ids
       const makeListUnique = new Set(newList);
       state.listOfIds = Array.from(makeListUnique);
+      toast.success("Product added to Wishlist", { duration: 3000 });
     },
     removeFromWishlist(state, action) {
       const newList = state.listOfIds.filter((id) => id != action.payload);

@@ -1,4 +1,5 @@
-import { Provider } from "@/providers/redux";
+import { Provider as ReduxProvider } from "@/providers/redux";
+import { Provider as ToastProvider } from "@/providers/toast";
 import { MainLayout } from "@/templates";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -19,9 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`flex flex-col ${inter.className}`}>
-        <Provider>
-          <MainLayout>{children}</MainLayout>
-        </Provider>
+        <ReduxProvider>
+          <ToastProvider>
+            <MainLayout>{children}</MainLayout>
+          </ToastProvider>
+        </ReduxProvider>
       </body>
     </html>
   );
