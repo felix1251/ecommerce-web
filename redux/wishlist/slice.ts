@@ -26,7 +26,7 @@ export const wishlistSlice = createSlice({
     removeFromWishlist(state, action) {
       const newList = state.data.filter((item) => item.id != action.payload);
       state.data = newList;
-      toast.success("Successfully remove item from wishlist", {
+      toast.success("Successfully remove wishlist item", {
         duration: 3000,
       });
     },

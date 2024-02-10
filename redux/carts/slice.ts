@@ -23,7 +23,7 @@ export const cartsSlice = createSlice({
     removeFromCart(state, action) {
       const newList = state.data.filter((cart) => cart.id != action.payload);
       state.data = newList;
-      toast.success("Successfully remove item from cart", { duration: 3000 });
+      toast.success("Successfully remove cart item", { duration: 3000 });
     },
     increseCartQuantity(state, action) {
       const cartIndex = state.data.findIndex(
