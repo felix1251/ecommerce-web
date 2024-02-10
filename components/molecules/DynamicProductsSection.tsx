@@ -12,7 +12,7 @@ import {
   isProductListLoading,
 } from "@/redux/products/slice";
 import { ProductListResponse } from "@/redux/products/types";
-import { AppDispatch } from "@/redux/store";
+import { AppDispatch, RootState } from "@/redux/store";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -33,8 +33,12 @@ const DynamicProductsSection: React.FunctionComponent<
 }: IDynamicProductsProps) => {
   const [page, setPage] = useState<number>(1);
   const dispatch = useDispatch<AppDispatch>();
-  const productListLoading: boolean = useSelector(isProductListLoading);
-  const productList: ProductListResponse = useSelector(getProductList);
+  const productListLoading = useSelector<RootState, boolean>(
+    isProductListLoading
+  );
+  const productList = useSelector<RootState, ProductListResponse>(
+    getProductList
+  );
   const canLoadMore: boolean = productList.limit * page < productList.total;
 
   useEffect(() => {

@@ -13,9 +13,9 @@ const Carousel: React.FunctionComponent<ICarousel> = ({
   const [displayImage, setDisplayImage] = useState<string>(images[0]);
 
   return (
-    <div className="flex flex-col gap-4 w-[35rem]">
+    <div className="flex flex-col gap-6 w-[35rem]">
       <img
-        className="h-[26rem] w-full border rouded-sm object-cover object-top"
+        className="h-[27rem] w-full border rouded-sm object-cover object-top"
         src={displayImage}
         alt="displayImage"
       />
