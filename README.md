@@ -28,25 +28,19 @@ next-basket
 ├── app (serve as pages)
 ```
 
-> The atomic structure consists of five levels: atoms, molecules, organisms, templates, and pages.
-> Each level represents a different level of abstraction and encapsulates related components.
+The atomic structure consists of five levels: atoms, molecules, organisms, templates, and pages.
+Each level represents a different level of abstraction and encapsulates related components.
+Atomic Design offers a clear and hierarchical structure for organizing UI elements.
 
-> Atoms:
-> Basic building blocks of matter, such as a button, input or a form label. They’re not useful on their own.
+1. Atoms - Basic building blocks of matter, such as a button, input or a form label. They’re not useful on their own.
 
-> Molecules:
-> Grouping atoms together, such as combining a button, input and form label to build functionality.
+2. Molecules - Grouping atoms together, such as combining a button, input and form label to build functionality.
 
-> Organisms:
-Combining molecules together to form organisms that make up a distinct section of an interface (i.e. navigation bar)
+3. Organisms - Combining molecules together to form organisms that make up a distinct section of an interface (i.e. navigation bar)
 
-> Templates:
-> Consisting mostly of groups of organisms to form a page — where clients can see a final design in place.
+4. Templates- Consisting mostly of groups of organisms to form a page — where clients can see a final design in place.
 
-> Pages:
-> An ecosystem that views different template renders. We can create multiple ecosystems
-> into a single environment — the application.
-
+5. Pages - An ecosystem that views different template renders. We can create multiple ecosystems into a single environment — the application.
 
 ## Light house scores
 
