@@ -1,6 +1,6 @@
 import { createSelector, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../store";
-import { WishlistState } from "./types";
+import { IsProductExistOnWishlistType, WishlistState } from "./types";
 
 const initialState: WishlistState = {
   listOfIds: [],
@@ -26,11 +26,6 @@ export const wishlistSlice = createSlice({
 
 export const getWishlistIds = (state: RootState): number[] =>
   state.wishlist.listOfIds;
-
-type IsProductExistOnWishlistType = (
-  state: RootState,
-  productId: number
-) => boolean;
 
 export const isProductExistOnWishlist: IsProductExistOnWishlistType =
   createSelector(

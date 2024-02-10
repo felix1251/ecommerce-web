@@ -1,6 +1,7 @@
 "use client";
 
 import { Carousel } from "@/atoms";
+import { ProductDetails } from "@/molecules";
 import {
   fetchSingleProduct,
   getSingleProduct,
@@ -10,7 +11,6 @@ import { ProductResponse } from "@/redux/products/types";
 import { AppDispatch, RootState } from "@/redux/store";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { ProductDetails } from ".";
 
 interface ISingleProduct {
   id: string;
@@ -30,14 +30,14 @@ const SingleProduct: React.FunctionComponent<ISingleProduct> = ({
   }, [dispatch, id]);
 
   return (
-    <div className="py-10 margin-min-screen flex gap-16">
+    <div className="py-10 margin-min-screen">
       {!product || loading ? (
         <div>Loading....</div>
       ) : (
-        <>
+        <div className="w-full flex gap-16">
           <Carousel images={product.images} />
           <ProductDetails product={product} />
-        </>
+        </div>
       )}
     </div>
   );

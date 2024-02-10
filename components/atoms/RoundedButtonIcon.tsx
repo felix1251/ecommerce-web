@@ -1,5 +1,3 @@
-import React from "react";
-
 interface IRoundedButtonIconProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
