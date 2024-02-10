@@ -19,7 +19,12 @@ const Drawer: React.FunctionComponent<IDrawerProps> = ({
 }: IDrawerProps) => {
   return (
     <Transition.Root show={drawerOpen} as={Fragment}>
-      <Dialog as="div" className="relative z-10" onClose={setDrawerOpen}>
+      <Dialog
+        unmount={false}
+        as="div"
+        className="relative z-10"
+        onClose={setDrawerOpen}
+      >
         <div className="fixed inset-0" />
 
         <div className="fixed inset-0 overflow-hidden">

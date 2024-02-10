@@ -1,10 +1,14 @@
 import { createSelector, createSlice } from "@reduxjs/toolkit";
 import toast from "react-hot-toast";
 import { RootState } from "../store";
-import { IsProductExistOnWishlistType, WishlistState } from "./types";
+import {
+  IsProductExistOnWishlistType,
+  SingleWishlist,
+  WishlistState,
+} from "./types";
 
 const initialState: WishlistState = {
-  listOfIds: [],
+  data: [],
 };
 
 export const wishlistSlice = createSlice({
@@ -12,30 +16,31 @@ export const wishlistSlice = createSlice({
   initialState,
   reducers: {
     addToWishlist(state, action) {
-      const newList: number[] = [action.payload].concat(state.listOfIds);
+      const newList: SingleWishlist[] = [action.payload].concat(state.data);
       // make the list always unique to avoid duplicate ids
-      const makeListUnique: Set<number> = new Set(newList);
-      state.listOfIds = Array.from(makeListUnique);
+      const makeListUnique: Set<SingleWishlist> = new Set(newList);
+      state.data = Array.from(makeListUnique);
       toast.success("Successfully added to Wishlist", { duration: 3000 });
     },
     removeFromWishlist(state, action) {
-      const newList = state.listOfIds.filter((id) => id != action.payload);
+      const newList = state.data.filter((item) => item.id != action.payload);
 
-      state.listOfIds = newList;
+      state.data = newList;
     },
   },
 });
 
-export const getWishlistIds = (state: RootState): number[] =>
-  state.wishlist.listOfIds;
+export const getWishlistIds = (state: RootState): SingleWishlist[] =>
+  state.wishlist.data;
 
 export const getWishlistCount = (state: RootState): number =>
-  state.wishlist.listOfIds.length;
+  state.wishlist.data.length;
 
 export const isProductExistOnWishlist: IsProductExistOnWishlistType =
   createSelector(
     [getWishlistIds, (_wishlist, productId: number) => productId],
-    (wishlist: number[], productId: number) => wishlist.includes(productId)
+    (wishlist: SingleWishlist[], productId: number) =>
+      wishlist.filter((wishlist) => wishlist.id == productId).length > 0
   );
 
 export const { addToWishlist, removeFromWishlist } = wishlistSlice.actions;

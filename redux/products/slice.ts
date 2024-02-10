@@ -26,7 +26,7 @@ const initialState: ProductsState = {
   error: null,
 };
 
-interface RejectValue {
+interface AsyncThunkOptions {
   rejectValue: any;
 }
 
@@ -34,7 +34,7 @@ interface RejectValue {
 export const fetchProducts = createAsyncThunk<
   ProductListResponse,
   ProductsPayload,
-  RejectValue
+  AsyncThunkOptions
 >(
   "products/fetchProducts",
   async ({ limit = 10, page = 1 }: ProductsPayload, { rejectWithValue }) => {
@@ -59,7 +59,7 @@ export const fetchProducts = createAsyncThunk<
 export const fetchSingleProduct = createAsyncThunk<
   ProductResponse,
   SingleProductPayload,
-  RejectValue
+  AsyncThunkOptions
 >(
   "products/fetchSingleProduct",
   async ({ id }: SingleProductPayload, { rejectWithValue }) => {

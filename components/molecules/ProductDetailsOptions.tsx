@@ -2,7 +2,8 @@
 
 import { Button, RoundedButtonIcon } from "@/atoms";
 import { addToCart, isProductExistOnCart } from "@/redux/carts/slice";
-import { RootState } from "@/redux/store";
+import { ProductResponse } from "@/redux/products/types";
+import { AppDispatch, RootState } from "@/redux/store";
 import {
   addToWishlist,
   isProductExistOnWishlist,
@@ -13,23 +14,23 @@ import ShoppingCartOutlined from "@mui/icons-material/ShoppingCartOutlined";
 import { useDispatch, useSelector } from "react-redux";
 
 interface IProductDetailsOptionsProps {
-  productId: number;
+  product: ProductResponse;
 }
 
 const ProductDetailsOptions: React.FunctionComponent<
   IProductDetailsOptionsProps
-> = ({ productId }: IProductDetailsOptionsProps) => {
-  const dispath = useDispatch();
+> = ({ product }: IProductDetailsOptionsProps) => {
+  const dispath = useDispatch<AppDispatch>();
 
   const isWishlistExist = useSelector<RootState, boolean>((state: RootState) =>
-    isProductExistOnWishlist(state, productId)
+    isProductExistOnWishlist(state, product.id)
   );
   const isCartExist = useSelector<RootState, boolean>((state: RootState) =>
-    isProductExistOnCart(state, productId)
+    isProductExistOnCart(state, product.id)
   );
 
-  const addProductToWishlist = () => dispath(addToWishlist(productId));
-  const addProductToCart = () => dispath(addToCart(productId));
+  const addProductToWishlist = () => dispath(addToWishlist(product));
+  const addProductToCart = () => dispath(addToCart(product));
 
   return (
     <div className="w-full flex flex-col gap-6">

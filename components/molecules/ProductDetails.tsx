@@ -42,7 +42,7 @@ const ProductDetails: React.FunctionComponent<IProductDetailsProps> = ({
           </div>
         </div>
       </div>
-      <ProductDetailsOptions productId={product.id} />
+      <ProductDetailsOptions product={product} />
     </div>
   );
 };

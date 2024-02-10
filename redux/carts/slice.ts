@@ -1,10 +1,10 @@
 import { createSelector, createSlice } from "@reduxjs/toolkit";
 import toast from "react-hot-toast";
 import { RootState } from "../store";
-import { CartType, CartsState, IsProductExistOnCartType } from "./types";
+import { CartsState, IsProductExistOnCartType, SingleCart } from "./types";
 
 const initialState: CartsState = {
-  list: [],
+  data: [],
 };
 
 export const cartsSlice = createSlice({
@@ -12,30 +12,29 @@ export const cartsSlice = createSlice({
   initialState,
   reducers: {
     addToCart(state, action) {
-      const cartObj: CartType = { id: action.payload, quantity: 1 };
-      const newList: CartType[] = [cartObj].concat(state.list);
+      const cartObj: SingleCart = { ...action.payload, quantity: 1 };
+      const newList: SingleCart[] = [cartObj].concat(state.data);
       // make the list always unique to avoid duplicate record-
-      const makeListUnique: Set<CartType> = new Set(newList);
-      state.list = Array.from(makeListUnique);
+      const makeListUnique: Set<SingleCart> = new Set(newList);
+      state.data = Array.from(makeListUnique);
       toast.success("Successfully added to Cart", { duration: 3000 });
     },
     removeFromCart(state, action) {
-      const newList = state.list.filter((cart) => cart.id != action.payload);
-
-      state.list = newList;
+      const newList = state.data.filter((cart) => cart.id != action.payload);
+      state.data = newList;
     },
     increseCartQuantity(state, action) {},
     deccreseCartQuantity(state, action) {},
   },
 });
 
-export const getCartlist = (state: RootState): CartType[] => state.carts.list;
+export const getCartlist = (state: RootState): SingleCart[] => state.carts.data;
 export const getCartCount = (state: RootState): number =>
-  state.carts.list.length;
+  state.carts.data.length;
 
 export const isProductExistOnCart: IsProductExistOnCartType = createSelector(
   [getCartlist, (_carts, productId: number) => productId],
-  (carts: CartType[], productId: number) =>
+  (carts: SingleCart[], productId: number) =>
     carts.filter((cart) => cart.id == productId).length > 0
 );
 
