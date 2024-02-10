@@ -1,4 +1,6 @@
 export { default as BetterExperienceSection } from "./BetterExperienceSection";
+export { default as CartDrawerData } from "./CartDrawerData";
+export { default as CartIconWithDrawer } from "./CartIconWithDrawer";
 export { default as DynamicProductsSection } from "./DynamicProductsSection";
 export { default as FeaturedPostSection } from "./FeaturedPostSection";
 export { default as HeaderActions } from "./HeaderActions";
@@ -14,3 +16,5 @@ export { default as SocialSection } from "./SocialSection";
 export { default as SubscribeEmail } from "./SubscribeEmail";
 export { default as Testimony } from "./Testimony";
 export { default as WhatTheySayAboutUsSection } from "./WhatTheySayAboutUsSection";
+export { default as WishlistDrawerData } from "./WishlistDrawerData";
+export { default as WishlistIconWithDrawer } from "./WishlistIconWithDrawer";

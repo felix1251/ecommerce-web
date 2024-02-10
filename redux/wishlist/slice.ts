@@ -12,9 +12,9 @@ export const wishlistSlice = createSlice({
   initialState,
   reducers: {
     addToWishlist(state, action) {
-      const newList = [action.payload].concat(state.listOfIds);
+      const newList: number[] = [action.payload].concat(state.listOfIds);
       // make the list always unique to avoid duplicate ids
-      const makeListUnique = new Set(newList);
+      const makeListUnique: Set<number> = new Set(newList);
       state.listOfIds = Array.from(makeListUnique);
       toast.success("Successfully added to Wishlist", { duration: 3000 });
     },
@@ -28,6 +28,9 @@ export const wishlistSlice = createSlice({
 
 export const getWishlistIds = (state: RootState): number[] =>
   state.wishlist.listOfIds;
+
+export const getWishlistCount = (state: RootState): number =>
+  state.wishlist.listOfIds.length;
 
 export const isProductExistOnWishlist: IsProductExistOnWishlistType =
   createSelector(

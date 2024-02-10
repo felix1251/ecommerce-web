@@ -1,8 +1,15 @@
-interface Cart {
+import { RootState } from "../store";
+
+export interface CartType {
   id: number;
   quantity: number;
 }
 
-interface CartsState {
-  list: Cart[];
+export interface CartsState {
+  list: CartType[];
 }
+
+export type IsProductExistOnCartType = (
+  state: RootState,
+  productId: number
+) => boolean;

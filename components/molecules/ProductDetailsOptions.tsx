@@ -1,6 +1,7 @@
 "use client";
 
 import { Button, RoundedButtonIcon } from "@/atoms";
+import { addToCart, isProductExistOnCart } from "@/redux/carts/slice";
 import { RootState } from "@/redux/store";
 import {
   addToWishlist,
@@ -20,11 +21,15 @@ const ProductDetailsOptions: React.FunctionComponent<
 > = ({ productId }: IProductDetailsOptionsProps) => {
   const dispath = useDispatch();
 
-  const wishlistExist = useSelector<RootState, boolean>((state: RootState) =>
+  const isWishlistExist = useSelector<RootState, boolean>((state: RootState) =>
     isProductExistOnWishlist(state, productId)
+  );
+  const isCartExist = useSelector<RootState, boolean>((state: RootState) =>
+    isProductExistOnCart(state, productId)
   );
 
   const addProductToWishlist = () => dispath(addToWishlist(productId));
+  const addProductToCart = () => dispath(addToCart(productId));
 
   return (
     <div className="w-full flex flex-col gap-6">
@@ -33,11 +38,11 @@ const ProductDetailsOptions: React.FunctionComponent<
         <Button size="lg">Select Options</Button>
         <RoundedButtonIcon
           onClick={addProductToWishlist}
-          disabled={wishlistExist}
+          disabled={isWishlistExist}
         >
           <FavoriteBorderIcon />
         </RoundedButtonIcon>
-        <RoundedButtonIcon disabled={false}>
+        <RoundedButtonIcon onClick={addProductToCart} disabled={isCartExist}>
           <ShoppingCartOutlined />
         </RoundedButtonIcon>
         <RoundedButtonIcon>
