@@ -1,16 +1,16 @@
 import { Breadcrumb } from "@/atoms";
-import { DynamicProductsSection, SingleProduct } from "@/components/molecules";
+import { DynamicProductsSection, ProductView } from "@/molecules";
 
-interface IProductProps {
+interface IProductPageProps {
   params: { id: string };
 }
 
-export default function Product({ params }: IProductProps) {
+export default function Product({ params }: IProductPageProps) {
   return (
     <main className="flex-1">
       <div className="bg-zinc-50">
         <Breadcrumb />
-        <SingleProduct id={params.id} />
+        <ProductView id={params.id} />
         <DynamicProductsSection
           withExtraDescription={false}
           limit={8}

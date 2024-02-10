@@ -12,13 +12,13 @@ import { AppDispatch, RootState } from "@/redux/store";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-interface ISingleProduct {
+interface IProductViewProps {
   id: string;
 }
 
-const SingleProduct: React.FunctionComponent<ISingleProduct> = ({
+const ProductView: React.FunctionComponent<IProductViewProps> = ({
   id,
-}: ISingleProduct) => {
+}: IProductViewProps) => {
   const dispatch = useDispatch<AppDispatch>();
   const loading = useSelector<RootState, boolean>(isProductLoading);
   const product = useSelector<RootState, ProductResponse | null>(
@@ -43,4 +43,4 @@ const SingleProduct: React.FunctionComponent<ISingleProduct> = ({
   );
 };
 
-export default SingleProduct;
+export default ProductView;
