@@ -7,6 +7,7 @@ export { default as HomeMainSection } from "./HomeMainSection";
 export { default as MediaPhotos } from "./MediaPhotos";
 export { default as MobileNav } from "./MobileNav";
 export { default as NotesSection } from "./NotesSection";
+export { default as ProductDetails } from "./ProductDetails";
 export { default as SingleProduct } from "./SingleProduct";
 export { default as SocialSection } from "./SocialSection";
 export { default as SubscribeEmail } from "./SubscribeEmail";
