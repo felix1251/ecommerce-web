@@ -30,7 +30,11 @@ const Carousel: React.FunctionComponent<ICarousel> = ({
     <div className="flex flex-col gap-4 md:gap-6 w-full lg:min-w-[34rem]">
       <div className="relative h-[20rem] sm:h-[24rem] md:h-[28rem]">
         {canNext && (
-          <button onClick={next} className="right-7 top-[45%] absolute">
+          <button
+            aria-label="next image"
+            onClick={next}
+            className="right-7 top-[45%] absolute"
+          >
             <ArrowForwardIosIcon
               className="text-gray-200 hover:text-primary transition-colors duration-200 ease-in-out"
               style={{ fontSize: 50 }}
@@ -38,7 +42,11 @@ const Carousel: React.FunctionComponent<ICarousel> = ({
           </button>
         )}
         {canPrev && (
-          <button onClick={prev} className="left-7 top-[45%] absolute">
+          <button
+            aria-label="prev image"
+            onClick={prev}
+            className="left-7 top-[45%] absolute"
+          >
             <ArrowBackIosIcon
               className="text-gray-200 hover:text-primary transition-colors duration-200 ease-in-out"
               style={{ fontSize: 50 }}
@@ -53,7 +61,11 @@ const Carousel: React.FunctionComponent<ICarousel> = ({
       </div>
       <div className="flex gap-2 md:gap-4 w-full overflow-x-auto">
         {images.map((url, index) => (
-          <button key={url} onClick={() => setCurrentIndex(index)}>
+          <button
+            aria-label="select image"
+            key={url}
+            onClick={() => setCurrentIndex(index)}
+          >
             <img
               src={url}
               className={`rounded-sm max-w-20 md:max-w-24 min-w-24 md:min-w-28 border-2 max-h-24 min-h-24 overflow-hidden object-cover object-top ${

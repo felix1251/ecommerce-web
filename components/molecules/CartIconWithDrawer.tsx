@@ -15,6 +15,7 @@ const CartDrawer: React.FunctionComponent = () => {
   return (
     <>
       <button
+        aria-label="cart icon drawer"
         onClick={() => setOpen(true)}
         className="flex justify-center font-semibold hover:bg-zinc-100 lg:hover:bg-transparent py-2.5 lg:p-0  text-center lg:text-start w-full lg:w-fit"
       >

@@ -58,12 +58,14 @@ const CartCard: React.FunctionComponent<ICartCard> = ({
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-1.5">
               <button
+                aria-label="decrease quantity"
                 onClick={decreaseQuantity}
                 className="h-8 px-1 border text-gray-800 hover:border-red-500 hover:text-red-500 rounded-sm transition-colors duration-100 ease-in-out"
               >
                 <RemoveIcon style={{ fontSize: 22 }} />
               </button>
               <button
+                aria-label="increase quantity"
                 onClick={increaseQuantity}
                 className="h-8 px-1 border text-gray-800 hover:border-green-500 hover:text-green-500 rounded-sm transition-colors duration-100 ease-in-out"
               >
@@ -74,6 +76,7 @@ const CartCard: React.FunctionComponent<ICartCard> = ({
           </div>
         </div>
         <button
+          aria-label="remove cart"
           onClick={removeCart}
           className="text-gray-400 hover:text-red-600 transition-colors duration-100 ease-in-out"
         >

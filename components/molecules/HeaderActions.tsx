@@ -11,7 +11,10 @@ const HeaderActions: React.FunctionComponent = () => {
       >
         Login / Register
       </Link>
-      <button className="font-semibold hover:bg-zinc-100 lg:hover:bg-transparent py-2.5 lg:p-0  text-center lg:text-start w-full lg:w-fit text-xl lg:text-base">
+      <button
+        aria-label="search icon"
+        className="font-semibold hover:bg-zinc-100 lg:hover:bg-transparent py-2.5 lg:p-0  text-center lg:text-start w-full lg:w-fit text-xl lg:text-base"
+      >
         <SearchIcon style={{ fontSize: 25 }} />
       </button>
       <CartIconWithDrawer />

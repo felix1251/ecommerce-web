@@ -46,6 +46,7 @@ const WishlistCard: React.FunctionComponent<IWislistCard> = ({
           </div>
         </div>
         <button
+          aria-label="remove wislist"
           onClick={removeWislist}
           className="text-gray-400 hover:text-red-600 transition-colors duration-100 ease-in-out"
         >
