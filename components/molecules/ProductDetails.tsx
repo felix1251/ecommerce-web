@@ -1,9 +1,6 @@
-import { Button } from "@/atoms";
+import { ProductDetailsOptions } from "@/molecules";
 import { ProductResponse } from "@/redux/products/types";
 import { discountedPrice, roundPrice } from "@/utils";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
-import ShoppingCartOutlined from "@mui/icons-material/ShoppingCartOutlined";
 import { Rating } from "@mui/material";
 
 interface IProductDetailsProps {
@@ -45,21 +42,7 @@ const ProductDetails: React.FunctionComponent<IProductDetailsProps> = ({
           </div>
         </div>
       </div>
-      <div className="w-full flex flex-col gap-6">
-        <hr className="border border-zinc-300" />
-        <div className="flex gap-5 items-center">
-          <Button size="lg">Select Options</Button>
-          <button className="p-2 rounded-full border border-zinc-600 text-zinc-600 hover:text-primary hover:border-primary transition-colors duration-200">
-            <FavoriteBorderIcon />
-          </button>
-          <button className="p-2 rounded-full border border-zinc-600 text-zinc-600 hover:text-primary hover:border-primary transition-colors duration-200">
-            <ShoppingCartOutlined />
-          </button>
-          <button className="p-2 rounded-full border border-zinc-600 text-zinc-600 hover:text-primary hover:border-primary transition-colors duration-200">
-            <RemoveRedEyeIcon />
-          </button>
-        </div>
-      </div>
+      <ProductDetailsOptions />
     </div>
   );
 };
