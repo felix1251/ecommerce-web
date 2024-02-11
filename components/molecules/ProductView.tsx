@@ -51,7 +51,7 @@ const ProductView: React.FunctionComponent<IProductViewProps> = ({
                   style={{ fontSize: 140 }}
                 />
                 <h2 className="text-4xl w-full md:w-[500px] md:text-5xl text-center text-red-600 font-semibold">
-                  {productError}
+                  {productError ?? "Something went wrong"}
                 </h2>
               </div>
             </div>
