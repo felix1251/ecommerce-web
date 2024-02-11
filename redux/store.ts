@@ -10,7 +10,6 @@ import {
   REHYDRATE,
   persistReducer,
 } from "redux-persist";
-import hardSet from "redux-persist/lib/stateReconciler/hardSet";
 import storage from "redux-persist/lib/storage";
 import cartsReducer from "./carts/slice";
 import productsReducer from "./products/slice";
@@ -26,13 +25,11 @@ const persistConfig = {
 const wishlistConfig = {
   key: "wishlist",
   storage,
-  stateReconciler: hardSet,
 };
 
 const cartsConfig = {
   key: "carts",
   storage,
-  stateReconciler: hardSet,
 };
 
 const rootReducer = combineReducers({
