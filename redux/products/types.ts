@@ -24,7 +24,7 @@ export interface ProductsState {
   listLoading: boolean;
   product: ProductResponse | null;
   productLoading: boolean;
-  error: any;
+  error: string;
 }
 
 export interface ProductsPayload {

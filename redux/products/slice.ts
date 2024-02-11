@@ -23,7 +23,7 @@ const initialState: ProductsState = {
   productLoading: false,
   list: ProductList,
   listLoading: false,
-  error: null,
+  error: "",
 };
 
 interface AsyncThunkOptions {
@@ -105,7 +105,7 @@ export const productSlice = createSlice({
       })
       .addCase(fetchProducts.rejected, (state, action) => {
         state.listLoading = false;
-        state.error = action.error.message;
+        state.error = action.payload.message;
       })
       .addCase(fetchSingleProduct.pending, (state, _action) => {
         state.productLoading = true;
@@ -116,7 +116,7 @@ export const productSlice = createSlice({
       })
       .addCase(fetchSingleProduct.rejected, (state, action) => {
         state.productLoading = false;
-        state.error = action.error.message;
+        state.error = action.payload.message;
       });
   },
 });
@@ -129,5 +129,7 @@ export const isProductListLoading = (state: RootState): boolean =>
   state.products.listLoading;
 export const isProductLoading = (state: RootState): boolean =>
   state.products.productLoading;
+export const getProductError = (state: RootState): string =>
+  state.products.error;
 
 export default productSlice.reducer;
