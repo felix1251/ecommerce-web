@@ -83,6 +83,7 @@ export const productSlice = createSlice({
   extraReducers(builder) {
     builder
       .addCase(fetchProducts.pending, (state, _action) => {
+        state.error = "";
         state.listLoading = true;
       })
       .addCase(fetchProducts.fulfilled, (state, action) => {
@@ -108,6 +109,7 @@ export const productSlice = createSlice({
         state.error = action.payload.message;
       })
       .addCase(fetchSingleProduct.pending, (state, _action) => {
+        state.error = "";
         state.productLoading = true;
       })
       .addCase(fetchSingleProduct.fulfilled, (state, action) => {
